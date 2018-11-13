@@ -1,0 +1,58 @@
+1542016855a:1:{s:12:"services.htm";a:10:{s:8:"fileName";s:12:"services.htm";s:7:"content";s:758:"title = "Services"
+url = "/services"
+layout = "default"
+is_hidden = 0
+
+[Worcbox\Features\Components\Items items]
+type = "tab"
+count = 0
+==
+<section class="page-banner second-22">
+	<div class="container">
+		<div class="bread">
+			<h3>الخدمات</h3>
+		</div>
+	</div>
+</section>
+<br/><br/>
+<div class="container">
+	{% set items = items.items %}
+	{% for item in items %}
+	<h4 class="text-warning">{{item.title}}</h4>
+	<div class="row mb-5">
+		<div class="col-12 col-md-4 order-md-12">
+			{% if item.icon.path %}
+			<img class="img-fluid" src="{{item.icon.path}}" alt="{{item.title}}" />
+			{% endif %}
+		</div>
+		
+		<div class="col-12 col-md-8 order-md-1">
+			<p>{{item.description | nl2br}}</p>
+		</div>
+	</div>
+	{% endfor %}
+</div>";s:5:"mtime";i:1536690708;s:6:"markup";s:619:"<section class="page-banner second-22">
+	<div class="container">
+		<div class="bread">
+			<h3>الخدمات</h3>
+		</div>
+	</div>
+</section>
+<br/><br/>
+<div class="container">
+	{% set items = items.items %}
+	{% for item in items %}
+	<h4 class="text-warning">{{item.title}}</h4>
+	<div class="row mb-5">
+		<div class="col-12 col-md-4 order-md-12">
+			{% if item.icon.path %}
+			<img class="img-fluid" src="{{item.icon.path}}" alt="{{item.title}}" />
+			{% endif %}
+		</div>
+		
+		<div class="col-12 col-md-8 order-md-1">
+			<p>{{item.description | nl2br}}</p>
+		</div>
+	</div>
+	{% endfor %}
+</div>";s:4:"code";N;s:5:"title";s:8:"Services";s:3:"url";s:9:"/services";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:39:"Worcbox\Features\Components\Items items";a:2:{s:4:"type";s:3:"tab";s:5:"count";s:1:"0";}}}

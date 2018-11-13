@@ -1,0 +1,107 @@
+1542016856a:1:{s:10:"e-shop.htm";a:10:{s:8:"fileName";s:10:"e-shop.htm";s:7:"content";s:1600:"title = "e-Shop"
+url = "/e-shop"
+layout = "default"
+is_hidden = 0
+
+[ProductList]
+sorting = "no"
+==
+<section class="page-banner second-22">
+	<div class="container">
+		<div class="bread">
+			<h3>منتجاتنا</h3>
+		</div>
+	</div>
+</section>
+<section class="in-page">
+	<div class="container">
+	{% set list = ProductList.make().active() %}
+		<table class="table table-hover">
+			<thead >
+				<tr>
+					<td style="width: 100px;"></td>
+					<th>الاسم</th>
+					<th>الفئة</th>
+					<th>وصف المنتج</th>
+					<th style="width: 50px;">السعر</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for item in list %}
+				<tr>
+					<td>
+						{% if item.preview_image is not empty %}
+		                    <a href="{{'product'|page({'slug':item.slug})}}"><img class="image-fluid" src="{{ item.preview_image.thumb(100,100,'crop') }}" title="{{ item.preview_image.title }}" alt="{{ item.preview_image.description }}"></a>
+		                {% endif %}
+					</td>
+					<td>
+						<b><a href="{{'product'|page({'slug':item.slug})}}">{{item.name}}</a></b>
+						
+					</td>
+					<td>
+						{{item.category.name}}
+					</td>
+					<td>
+						<a href="{{'product'|page({'slug':item.slug})}}">{{item.preview_text}}</a>
+					</td>
+					<td>
+						{% set obOffer = item.offer.first() %}
+					    {% if obOffer.isNotEmpty()%}  
+					        <p class="start-price text-left"><b> <span class="price main-color"><span>SR</span>{{obOffer.price}}</span> </b></p>
+					    {% endif %}
+					</td>
+				</tr>
+				{% endfor%}
+			</tbody>
+		</table>
+	</div>
+</section>";s:5:"mtime";i:1536690708;s:6:"markup";s:1501:"<section class="page-banner second-22">
+	<div class="container">
+		<div class="bread">
+			<h3>منتجاتنا</h3>
+		</div>
+	</div>
+</section>
+<section class="in-page">
+	<div class="container">
+	{% set list = ProductList.make().active() %}
+		<table class="table table-hover">
+			<thead >
+				<tr>
+					<td style="width: 100px;"></td>
+					<th>الاسم</th>
+					<th>الفئة</th>
+					<th>وصف المنتج</th>
+					<th style="width: 50px;">السعر</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for item in list %}
+				<tr>
+					<td>
+						{% if item.preview_image is not empty %}
+		                    <a href="{{'product'|page({'slug':item.slug})}}"><img class="image-fluid" src="{{ item.preview_image.thumb(100,100,'crop') }}" title="{{ item.preview_image.title }}" alt="{{ item.preview_image.description }}"></a>
+		                {% endif %}
+					</td>
+					<td>
+						<b><a href="{{'product'|page({'slug':item.slug})}}">{{item.name}}</a></b>
+						
+					</td>
+					<td>
+						{{item.category.name}}
+					</td>
+					<td>
+						<a href="{{'product'|page({'slug':item.slug})}}">{{item.preview_text}}</a>
+					</td>
+					<td>
+						{% set obOffer = item.offer.first() %}
+					    {% if obOffer.isNotEmpty()%}  
+					        <p class="start-price text-left"><b> <span class="price main-color"><span>SR</span>{{obOffer.price}}</span> </b></p>
+					    {% endif %}
+					</td>
+				</tr>
+				{% endfor%}
+			</tbody>
+		</table>
+	</div>
+</section>";s:4:"code";N;s:5:"title";s:6:"e-Shop";s:3:"url";s:7:"/e-shop";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"ProductList";a:1:{s:7:"sorting";s:2:"no";}}}

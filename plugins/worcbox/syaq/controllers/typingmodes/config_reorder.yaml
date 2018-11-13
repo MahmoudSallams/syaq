@@ -1,0 +1,4 @@
+title: TypingModes
+modelClass: Worcbox\Syaq\Models\TypingMode
+toolbar:
+    buttons: reorder_toolbar

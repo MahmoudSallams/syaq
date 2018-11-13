@@ -1,0 +1,40 @@
+title = "TestLogin"
+url = "/testlogin"
+layout = "default"
+is_hidden = 0
+
+[session]
+security = "all"
+redirect = "home"
+
+[account]
+paramCode = "code"
+forceSecure = 0
+==
+<?php
+function onEnd(){
+	$orderObject = Worcbox\Syaq\Models\Order::make(['total' => 2]);
+	print_r($orderObject);
+	exit();
+	$order = Illuminate\Support\Facades\Session::get('order');
+	if (!isset($order['user_id']) || empty($order['user_id'])){
+		if (Auth::check()){
+			$loggedInUser = Auth::getUser();
+			$order['user_id'] = $loggedInUser['id'];
+		} else {
+			return Redirect::to('login');
+		}
+	}
+	Illuminate\Support\Facades\Session::put('order', $order);
+	$this['order'] = $order;
+}
+?>
+==
+{% if user %}
+    <p>Hello {{ user.name }}</p>
+    <a data-request="onLogout" data-request-data="redirect: '/good-bye'">Sign out</a>
+{% else %}
+    <p>Nobody is logged in</p>
+{% endif %}
+{% component 'account' %}
+{{ hello }}

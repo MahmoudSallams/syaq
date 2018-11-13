@@ -1,0 +1,50 @@
+1542016856a:1:{s:10:"thanks.htm";a:10:{s:8:"fileName";s:10:"thanks.htm";s:7:"content";s:583:"title = "Thanks"
+url = "/thanks"
+layout = "default"
+is_hidden = 0
+
+[session]
+security = "user"
+redirect = "login"
+==
+<section class="page-banner second-22">
+	<div class="container">
+		<div class="bread">
+		 	<h3>شكراً</h3>
+		</div>
+	</div>
+</section>
+<br/><br/>
+<div class="container">
+	<p>شكرا على استخدام سياق </p>	
+	<br/>
+	<p>يمكنك متابعة طلبك من قائمك حسابك الشخصى</p>
+	<br/>
+	<a class="btn btn-primary" href="{{'running-orders' | page}}">من هنا</a>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+</div>";s:5:"mtime";i:1536690708;s:6:"markup";s:466:"<section class="page-banner second-22">
+	<div class="container">
+		<div class="bread">
+		 	<h3>شكراً</h3>
+		</div>
+	</div>
+</section>
+<br/><br/>
+<div class="container">
+	<p>شكرا على استخدام سياق </p>	
+	<br/>
+	<p>يمكنك متابعة طلبك من قائمك حسابك الشخصى</p>
+	<br/>
+	<a class="btn btn-primary" href="{{'running-orders' | page}}">من هنا</a>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+</div>";s:4:"code";N;s:5:"title";s:6:"Thanks";s:3:"url";s:7:"/thanks";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:7:"session";a:2:{s:8:"security";s:4:"user";s:8:"redirect";s:5:"login";}}}

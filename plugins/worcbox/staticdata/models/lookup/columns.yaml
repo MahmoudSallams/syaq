@@ -1,0 +1,7 @@
+columns:
+    key:
+        label: Key
+        type: text
+    value:
+        label: Value
+        type: text

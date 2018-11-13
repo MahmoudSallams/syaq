@@ -1,0 +1,36 @@
+columns:
+    id:
+        label: ID
+        type: number
+    created_at:
+        label: Date
+        type: datetime
+    username:
+        label: UserName
+        type: text
+        select: name
+        relation: User
+    email:
+        label: Email
+        type: text
+        select: email
+        relation: User
+    service:
+        label: Service
+        type: text
+        select: name
+        relation: Service
+    express:
+        label: Express
+        type: switch
+    high_quality:
+        label: Quality
+        type: switch
+    field_id:
+        label: Field
+        type: text
+        select: name
+        relation: Field
+    topic:
+        label: Topic
+        type: text

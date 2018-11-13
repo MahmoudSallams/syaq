@@ -1,0 +1,153 @@
+title = "HomePage"
+url = "/"
+layout = "default"
+is_hidden = 0
+
+[Worcbox\Features\Components\Items items]
+type = "feature"
+count = 0
+
+[Worcbox\Features\Components\Items tabs]
+type = "tab"
+count = 3
+
+[Worcbox\Packages\Components\Items packages]
+count = 3
+==
+<?php
+function onInit()
+{
+    $this['activeMenuItem'] = 'home';
+}
+?>
+==
+<section class="main-banner">
+    <div class="container">
+        <h1>مرحباً بكم في  سياق</h1>
+        <p >هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة لوريم إيبسوم</p>
+        <a href="{{'request' | page}}" class="btn btn-primary">اطلب محتوى</a>
+    </div>
+</section>
+<section class="section white-bg">
+    <div class="container">
+        <h2>ما يميزنا</h2>
+        <div class="row why-us">
+        	{% set items = items.items %}
+        	{% for item in items %}
+	            <div class="col-md-4 why-us-item">
+	                <img src="{{item.icon.path}}">
+	                
+	                <h3>{{item.title}}</h3>
+	                <p>{{item.description}}</p>
+	            </div>
+            {% endfor%}
+        </div>
+    </div>
+</section>
+<section class="section light-bg">
+    <div class="container">
+		<div class="items-services-parent row">
+		    <div class="items-services-first col-12 col-md">
+		        <span>كيف يعمل سياق؟</span>
+		        <br/>
+		        <span class="text-orange">احصل على</span>
+		        <br/>
+		        <span class="text-big">محتوى عالي الجودة لموقعك أو مدونتك</span>
+		        <br/>
+		        <span class="text-orange">ثلاث خطوات بسيطة</span>
+		    </div>
+		    <div class="items-services-item col-12 col-md-auto">
+		        <img src="{{'assets/imgs/schedule.png'| theme}}" alt=""/>
+		        <h3>اختر نوع المحتوى</h3>
+		        <p>سواءً تريد ان محتوى لمدونتك، لموقعك أو تفضل المقالات لأغراض التسويق</p>
+		    </div>
+		    <div class="items-services-arrow align-self-center d-none d-sm-block">
+		        <i class="fa fa-chevron-left"></i>
+		        <i class="fa fa-chevron-done"></i>
+		    </div>
+		    <div class="items-services-item col-12 col-md-auto">
+		        <img src="{{'assets/imgs/loan-money.png'| theme}}" alt=""/>
+		        <h3>قم بالدفع بسهولة</h3>
+		        <p>يمكنك الدفع الكترونياً بسهولة و يسر </p>
+		    </div>
+		    <div class="items-services-arrow align-self-center d-none d-sm-block">
+		        <i class="fa fa-chevron-left"></i>
+		        <i class="fa fa-chevron-done"></i>
+		    </div>
+		    <div class="items-services-item col-12 col-md-auto">
+		        <img src="{{'assets/imgs/approved.png'| theme}}" alt=""/>
+		        <h3>قم بالدفع بسهولة</h3>
+		        <p>راجع المحتوى و اعتمده  سياق المحترف مع فريق </p>
+		    </div>
+		</div>
+	</div>
+</section>
+<section class="section other-features">
+	<div class="container">
+		<h2>خدماتنا</h2>
+		<div class="row">
+			<div class="col-sm-12 tabs">
+				<ul class="nav nav-tabs cust">
+					{% set tabs = tabs.items %}
+					{% for tab in tabs %}
+					<li class=""><a class="{{loop.index	== 1?'active':''}}" data-toggle="tab" href="#feature-{{tab.id}}" aria-expanded="false">{{tab.title}}</a></li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+			<br/><br/>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="tab-content ">
+					{% for tab in tabs %}
+					<div id="feature-{{tab.id}}" class="tab-pane fade {{loop.index	== 1?'active show':''}}">
+						<div class="row reordering justify-content-between">
+							<div class="col-sm-5  reordering-2">
+								<p>{{tab.description | nl2br}}</p> 
+							</div>
+							<div class="col-sm-5 reordering-1 m-b-mob-30">
+								<img src="{{tab.icon.path}}" alt="" class="img-fluid img-left">
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="section pricing-table light-bg">
+	<div class="container">
+		<h2>باقاتنا</h2>
+		<div class="row packages">
+			{% set items = packages.items %}
+			{% for package in items %}
+			  <div class="col-sm-4">
+				<div class="price-table second-bg">
+				<p class="p-l title main-color2"><b>{{package.title}}</b></p>
+				<p class="start-price"><b> <span class="price main-color"><span>SR</span>{{package.price}}</span> 
+				<span class="per">شهرياً</span></b></p>
+				<p class="p-l s5">{{package.line_1}}</p>
+				<p class="p-l s5">{{package.line_2}}</p>
+				<p class="p-l s5">{{package.line_3}}</p>
+				<a href="{{'package' | page({id:package.id})}} " class="btn">ابدأ الان</a>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>
+<div class="guaratess">
+	<div class="container">
+		<div class="row align-items-center ">
+			<div class="col-sm-6 ">
+				<h1 class="">يمكنك ايضاً تفصيل المحتوى الخاص بك بما يناسب احتياجاتك و ميزانيتك </h1>
+				<p>اطلب محتوى الان من خلال شاشة طلب المحتوى والتى ستساعدك على ادارة الطلب الخاص بك بسهولة</p>
+			</div>
+			<div class="col-sm-6 vertio text-center">
+				<a href="{{ 'login' | page }}" class="btn">انشاء حساب جديد</a>
+			</div>
+		</div>
+	</div>
+</div>

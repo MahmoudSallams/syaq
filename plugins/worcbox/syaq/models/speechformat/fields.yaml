@@ -1,0 +1,5 @@
+fields:
+    name:
+        label: 'Speeach Format Name'
+        span: auto
+        type: text

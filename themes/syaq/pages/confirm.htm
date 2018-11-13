@@ -1,0 +1,20 @@
+title = "Confirm"
+url = "/confirm"
+layout = "default"
+is_hidden = 0
+
+[session]
+security = "user"
+redirect = "login"
+
+[orderConfirm]
+==
+<?php
+function onEnd(){
+	$this['order'] = $this['orderConfirm']->order;
+}
+?>
+==
+{% component 'session' %}
+{% component 'orderConfirm' %}
+{% set order = orderConfirm.order %}

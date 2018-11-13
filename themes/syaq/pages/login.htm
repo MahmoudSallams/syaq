@@ -1,0 +1,166 @@
+title = "Login"
+url = "/login"
+layout = "default"
+is_hidden = 0
+
+[account]
+paramCode = "code"
+forceSecure = 0
+
+[sociallogin]
+==
+<?php
+function onEnd(){
+	if (Auth::check()){
+		if (Illuminate\Support\Facades\Session::has('order')) {
+			return Redirect::to('confirm');
+		} else {
+			return Redirect::to('/');
+		}
+	} 
+}
+?>
+==
+<section class="page-banner second-22">
+	<div class="container">
+		<div class="bread">
+	 		<h3>دخول / سجل الان</h3>
+		</div>
+	</div>
+</section>
+<br/><br/>
+<div class="container">
+	{% component 'sociallogin' %}
+	
+	<br/><br/>
+	<div id="login-error" class="alert alert-danger d-none"></div>
+	{% if not user %}
+
+    <div class="row">
+
+        <div class="col-md-6 ">
+            <h3>دخول</h3>
+            
+            <form
+			    data-request="onSignin" novalidate  >
+			    <div class="form-group">
+			        <label for="userSigninLogin">الايميل</label>
+			        <input
+			            name="login"
+			            type="text"
+			            class="form-control"
+			            id="userSigninLogin"
+			             />
+			    </div>
+			
+			    <div class="form-group">
+			        <label for="userSigninPassword">كلمة المرور</label>
+			        <input
+			            name="password"
+			            type="password"
+			            class="form-control"
+			            id="userSigninPassword"
+			            />
+			    </div>
+			
+			    <button type="submit" class="btn btn-primary">دخول</button>
+			    او سجل عن طريق
+			    {% for name, link in social_login_links %}
+					<a href="{{ link }}"><i class="fab fa-{{name=="Facebook"?"facebook":"twitter"}}"></i></a>
+				{% endfor %}
+				<br/><br/>
+				<a href="{{'forgot-password' | page}}">نسيت كلمة المرور؟</a>
+			</form>
+			
+			<br />
+			
+        </div>
+
+        <div class="col-md-6 border-right">
+            <h3>تسجيل حساب جديد</h3>
+		    <form
+		        data-request="onRegister" novalidate>
+		        <div class="form-group">
+		            <label for="registerName">الاسم</label>
+		            <input
+		                name="name"
+		                type="text"
+		                class="form-control"
+		                id="registerName" />
+		        </div>
+		
+		        <div class="form-group">
+		            <label for="registerEmail">الايميل</label>
+		            <input
+		                name="email"
+		                type="email"
+		                class="form-control"
+		                id="registerEmail"
+		                />
+		        </div>
+	
+		
+		        <div class="form-group">
+		            <label for="registerPassword">كلمة المرور</label>
+		            <input
+		                name="password"
+		                type="password"
+		                class="form-control"
+		                id="registerPassword" />
+		        </div>
+		
+		        <button type="submit" class="btn btn-primary">تسجيل</button>
+		    </form>
+        </div>
+
+    </div>
+
+{% else %}
+
+    {% partial account ~ '::activation_check' %}
+
+    {% partial account ~ '::update' %}
+
+    {% partial account ~ '::deactivate_link' %}
+
+{% endif %}
+<br/><br/>
+</div>
+{% put bodyend %}
+<script>
+    $(window).on('ajaxErrorMessage', function(event, message){
+    	if(message.search("valid email address") > -1){
+    		message= 'الايميل غير صحيح';
+    	}else if(message.search('The login field is required') > -1){
+    		message= "برجاء ادخال الايميل";
+    	}else if(message.search('The email field is required') > -1){
+    		message= "برجاء ادخال الايميل";
+    	}else if(message.search('A user was not found with the given credentials') > -1){
+    		message= "بيانات الدخول غير صحيحة"
+    	}else if(message.search(' text credentials however hashed') > -1){
+    		message= "بيانات الدخول غير صحيحة"
+    	}else if(message.search('The password field is required') > -1){
+    		message= "برجاء ادخال كلمة المرور";
+    	}else if(message.search('The name field is required') > -1){
+    		message= "برجاء ادخال الاسم";
+    	}else if(message.search('The password must be between') > -1){
+    		message= "الايميل يجب ان يزيد عن 6 احرف";
+    	}else if(message.search('The email has already been taken.') > -1){
+    		message= "الايميل مستخدم من قبل";
+    	}else if(message.search('Invalid activation code supplied.') > -1){
+    		message= "رمز التعريف غير صحيح";
+    	}
+    	
+    
+    	$('#login-error').removeClass('d-none').text(message);
+
+
+        // This can be any custom JavaScript you want
+        //alert('Something bad happened, mate, here it is: ' + message);
+
+        // This will stop the default alert() message
+        event.preventDefault();
+
+    })
+</script>
+{% endput %}

@@ -1,0 +1,10 @@
+name: Orders
+form: $/worcbox/syaq/models/order/assigning_fields.yaml
+modelClass: Worcbox\Syaq\Models\Order
+defaultRedirect: worcbox/syaq/orders
+create:
+    redirect: 'worcbox/syaq/orders/update/:id'
+    redirectClose: worcbox/syaq/orders
+update:
+    redirect: worcbox/syaq/orders
+    redirectClose: worcbox/syaq/orders

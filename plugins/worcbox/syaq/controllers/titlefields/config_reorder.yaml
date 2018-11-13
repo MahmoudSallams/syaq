@@ -1,0 +1,4 @@
+title: TitleFields
+modelClass: Worcbox\Syaq\Models\TitleField
+toolbar:
+    buttons: reorder_toolbar

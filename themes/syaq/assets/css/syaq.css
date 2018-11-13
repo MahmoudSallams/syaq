@@ -1,0 +1,311 @@
+body {
+  margin: 0px;
+  padding: 0px; }
+
+.sy-box {
+  margin-bottom: 30px;
+  /*font-family: 'Cairo', sans-serif;*/
+  /*direction: rtl;*/
+  /*background: #f9f9f9;*/
+  /*padding: 15px;*/ }
+  .sy-box .orderconfirm {
+    width: 100%; }
+    .sy-box .orderconfirm tr td {
+      padding: 10px; }
+    .sy-box .orderconfirm tr td:first-of-type {
+      font-weight: bold;
+      width: 250px; }
+    .sy-box .orderconfirm tr:hover {
+      background: #EDEDED; }
+  .sy-box .olreq {
+    background-color: #65a668;
+    color: #FFFFFF;
+    text-align: center;
+    -webkit-border-top-left-radius: 3px;
+    -webkit-border-top-right-radius: 3px;
+    -moz-border-radius-topleft: 3px;
+    -moz-border-radius-topright: 3px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px; }
+    .sy-box .olreq th, .sy-box .olreq td {
+      padding: 8px; }
+  .sy-box label {
+    display: block;
+    margin-bottom: 10px; }
+  .sy-box .sy-input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    resize: none;
+    border: 1px solid #dfe3e9; }
+  .sy-box ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none; }
+  .sy-box .sy-wizard-items {
+    border-radius: 4px;
+    background-color: #ffffff;
+    display: flex;
+    margin-bottom: 15px;
+    padding: 15px;
+    border: solid 1px #dfe2e5; }
+    .sy-box .sy-wizard-items li {
+      border-radius: 2px;
+      padding: 10px;
+      flex-grow: 1;
+      text-align: center; }
+      .sy-box .sy-wizard-items li.active {
+        /*background: #F7F7F7;*/ }
+        .sy-box .sy-wizard-items li.active span {
+          background: #e37a41;
+          border: 1px solid #e37a41;
+          color: #FFFFFF; }
+      .sy-box .sy-wizard-items li span {
+        font-family: sans-serif;
+        width: 32px;
+        line-height: 30px;
+        /*background-color: $color-primary;*/
+        /*background-image: linear-gradient(to bottom, #9d90e4, #8261e6);*/
+        display: inline-block;
+        border-radius: 100%;
+        font-size: 24px;
+        font-weight: 600;
+        font-style: normal;
+        font-stretch: normal;
+        letter-spacing: -0.2px;
+        color: #374050;
+        margin-left: 10px;
+        border: 1px solid #374050; }
+        @media screen and (max-width: 768px) {
+          .sy-box .sy-wizard-items li span {
+            display: block;
+            margin: auto; } }
+    @media screen and (max-width: 992px) {
+      .sy-box .sy-wizard-items li {
+        font-size: 12px;
+        padding: 0px; }
+        .sy-box .sy-wizard-items li span {
+          width: 42px;
+          line-height: 40px;
+          font-size: 30px; } }
+  .sy-box .sy-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    margin: 0px -15px; }
+    .sy-box .sy-flex-container h2 {
+      text-align: center;
+      color: #374050;
+      font-size: 24px;
+      font-weight: normal;
+      margin-bottom: 40px; }
+    .sy-box .sy-flex-container h3 {
+      text-align: center; }
+    .sy-box .sy-flex-container .text-secondery {
+      color: #fa8e11; }
+    .sy-box .sy-flex-container .text-primary {
+      color: #1bad58; }
+    .sy-box .sy-flex-container .sy-item-1-of-2-col {
+      box-sizing: border-box;
+      width: 50%;
+      padding: 0px 15px; }
+    .sy-box .sy-flex-container .sy-item-1-of-3-col {
+      box-sizing: border-box;
+      width: 33.3333%;
+      padding: 0px 15px; }
+    .sy-box .sy-flex-container .sy-item-2-of-3-col {
+      width: 66.66666%;
+      box-sizing: border-box;
+      padding: 0px 15px; }
+    .sy-box .sy-flex-container .sy-item-3-of-3-col {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0px 15px; }
+    @media screen and (max-width: 768px) {
+      .sy-box .sy-flex-container .sy-item-1-of-2-col-sm {
+        width: 50%; }
+      .sy-box .sy-flex-container .sy-item-1-col-sm {
+        width: 100%; } }
+  .sy-box .sy-items-box, .sy-box .sy-cart, .sy-box .sy-data-box {
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: solid 1px #dfe2e5;
+    padding: 15px;
+    height: 100%;
+    box-sizing: border-box; }
+  .sy-box .sy-cart {
+    padding: 0px;
+    padding-bottom: 15px; }
+  .sy-box .sy-user-box {
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 15px;
+    background-color: #ffffff;
+    border: solid 1px #dfe2e5; }
+    .sy-box .sy-user-box .sy-data-box {
+      background: #F7F7F7; }
+    .sy-box .sy-user-box h2 {
+      padding: 20px; }
+  .sy-box .sy-data-box label {
+    display: block;
+    margin-bottom: 10px; }
+  .sy-box .sy-data-box .sy-input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    resize: none;
+    border: 1px solid #dfe3e9; }
+  .sy-box .sy-data-box select.sy-input {
+    background-image: linear-gradient(to top, #f2f4f7, #ffffff);
+    border: solid 1px #ced0da; }
+  .sy-box .sy-cart ul li {
+    display: flex;
+    /*border-bottom: 1px solid  #d7d8da;*/
+    padding: 15px 15px; }
+    .sy-box .sy-cart ul li > div {
+      flex-grow: 1;
+      color: #575962;
+      width: 50%;
+      font-size: 12px; }
+      .sy-box .sy-cart ul li > div small {
+        display: block;
+        color: #575962; }
+  .sy-box .sy-products > div {
+    margin-bottom: 30px; }
+  .sy-box .sy-products a {
+    background: #f7f7f7;
+    border: 1px solid #f7f7f7;
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    color: #575962;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 3px; }
+    .sy-box .sy-products a.active {
+      color: #FFF;
+      background: #e37a41; }
+    .sy-box .sy-products a span {
+      font-size: 10px;
+      font-weight: normal; }
+    @media screen and (max-width: 768px) {
+      .sy-box .sy-products a {
+        /*padding: 10px;*/
+        font-size: 14px; } }
+  .sy-box .sy-counter {
+    border: 1px solid #EDEDED;
+    text-align: center;
+    width: 121px;
+    padding: 0px;
+    border-radius: 5px; }
+    .sy-box .sy-counter button {
+      background: transparent;
+      border: 1px solid #fff;
+      border-radius: 2px;
+      color: #E0E0E0;
+      font-size: 21px;
+      width: 26px;
+      padding: 0;
+      outline: none !important; }
+    .sy-box .sy-counter span {
+      display: inline-block;
+      width: 60px;
+      text-align: center;
+      font-size: 21px; }
+  .sy-box input.sy-checkbox {
+    display: none; }
+  .sy-box input.sy-checkbox:checked + label.sy-checkbox:before {
+    color: #fa8e11; }
+  .sy-box input.sy-checkbox + label.sy-checkbox {
+    cursor: pointer;
+    position: relative;
+    display: block;
+    padding-right: 30px;
+    font: normal normal normal 14px/1 "Font Awesome\ 5 Free";
+    margin-bottom: 15px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 14px;
+    color: #575962; }
+    .sy-box input.sy-checkbox + label.sy-checkbox:before {
+      color: #cccccc;
+      font-size: 24px;
+      content: "\f058";
+      position: absolute;
+      right: 0px;
+      top: -3px; }
+  .sy-box .sy-button-submit {
+    border-radius: 4px;
+    background-color: #e37a41;
+    font-size: 20px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.25;
+    letter-spacing: 0.3px;
+    text-align: center;
+    color: #ffffff;
+    border: none;
+    padding: 10px 60px;
+    display: block;
+    margin: auto;
+    margin-top: 15px;
+    cursor: pointer; }
+  .sy-box .sy-button-pay {
+    border-radius: 4px;
+    background-color: #e37a41;
+    font-size: 20px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.25;
+    letter-spacing: 0.3px;
+    text-align: center;
+    color: #ffffff;
+    border: none;
+    padding: 10px 60px;
+    display: block;
+    margin: 15px;
+    margin-top: 15px;
+    cursor: pointer; }
+  .sy-box .sy-button-edit {
+    border-radius: 4px;
+    background-color: #cccccc;
+    font-size: 20px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.25;
+    letter-spacing: 0.3px;
+    text-align: center;
+    color: #ffffff;
+    border: none;
+    padding: 5px 40px;
+    display: block;
+    margin: 15px;
+    margin-top: 15px;
+    cursor: pointer; }
+  .sy-box .sy-price, .sy-box .sy-days {
+    text-align: center;
+    font-size: 20px !important;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    text-align: center;
+    /*color: #000000 !important;*/ }
+  .sy-box .hidden {
+    display: none; }
+
+#sy-total-price {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.13;
+  letter-spacing: 0.3px; }

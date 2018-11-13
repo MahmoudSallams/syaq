@@ -1,0 +1,67 @@
+description = "header"
+
+[viewBag]
+snippetCode = "header"
+snippetName = "Header"
+
+[staticMenu]
+code = "header-menu"
+==
+<nav class="navbar navbar-expand-lg {{this.page.id!="home"?"navbar-dark bg-dark":"navbar-light"}}  ">
+    <div class="container">
+        <a class="navbar-brand" href="{{ 'home' | page }}"><img style="{{this.page.id!="home"?"filter: brightness(0) invert(1);":""}}" src='{{'assets/imgs/logo-syaq.png'| theme}}' /></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        	{% if staticMenu.menuItems %}
+			    <ul class="navbar-nav mr-auto">
+			    	{% for item in staticMenu.menuItems %}
+			    	
+			    		<li  class="nav-item {{item.code}}-nav-item  {{ item.isActive ? 'active' : '' }} {{ item.isChildActive ? 'child-active' : '' }} ">
+			    			<a class="nav-link {{ item.viewBag.cssClass }}" href="{{ item.url }}">{{ item.title }}</a>
+			    		</li>
+			    	{% endfor %}
+			    	{% if user %}
+				    	<li class="nav-item">
+							    <a class="nav-link"  href="{{'account' | page}}" data-request-data="redirect: '/'">{{ user.name }}</a>
+				    	</li>
+					{% endif %}
+			    	<li class="nav-item">
+			    		{% if user %}
+						    <a class="nav-link" data-request="onLogout" href="#" data-request-data="redirect: '/'">خروج</a>
+						{% else %}
+						    <a class="nav-link" href='{{ 'login' | page }}'>دخول / سجل الان</a>
+						{% endif %}
+			    	</li>
+			    </ul>
+			{% endif %}
+			
+			
+            <!-- <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">الرئيسية</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">من نحن</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">الباقات</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">الخدمات الخاصة</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">تواصل معنا</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">دخول / سجل الان</a>
+                </li>
+                <li class="nav-item nav-item-order">
+                    <a class="btn btn-warning" href="#">طلب محتوى <span class="sr-only">(current)</span></a>
+                </li>
+            </ul> -->
+        </div>
+    </div>
+</nav>

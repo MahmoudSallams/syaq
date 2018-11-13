@@ -1,0 +1,4 @@
+title: SpeechFormats
+modelClass: Worcbox\Syaq\Models\SpeechFormat
+toolbar:
+    buttons: reorder_toolbar

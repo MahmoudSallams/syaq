@@ -1,0 +1,58 @@
+1542016856a:1:{s:11:"default.htm";a:7:{s:8:"fileName";s:11:"default.htm";s:7:"content";s:1163:"[staticPage]
+useContent = 1
+default = 1
+
+[session]
+security = "all"
+==
+<?php
+function onStart(){
+	$lookups = \Worcbox\StaticData\Models\Lookup::all();
+	foreach($lookups as $lookup) {
+		$this[str_replace(".", "_", $lookup->code)] = ['key' => $lookup->key, 'value' => $lookup->value];
+	}
+}
+?>
+==
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+    <head>
+    	<title>{{this.page.title}}</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="{{'assets/css/fontawesome-all.min.css' |theme}}" rel="stylesheet" type="text/css"/>
+         <link href="{{'assets/css/main.css' |theme}}" rel="stylesheet" type="text/css"/>
+         <link href="{{'assets/css/syaq.css' |theme}}" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        {% partial "header" %}
+        {% page %}
+        {% partial "footer" %}
+        <script src="{{[ 'assets/js/jquery-3.3.1.min.js','assets/js/popper.min.js','assets/js/bootstrap.min.js','assets/js/syaq.js'] | theme}}"></script>
+        {% framework extras %}
+         {% placeholder bodyend %}
+    </body>
+</html>";s:5:"mtime";i:1536690708;s:6:"markup";s:864:"<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+    <head>
+    	<title>{{this.page.title}}</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="{{'assets/css/fontawesome-all.min.css' |theme}}" rel="stylesheet" type="text/css"/>
+         <link href="{{'assets/css/main.css' |theme}}" rel="stylesheet" type="text/css"/>
+         <link href="{{'assets/css/syaq.css' |theme}}" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        {% partial "header" %}
+        {% page %}
+        {% partial "footer" %}
+        <script src="{{[ 'assets/js/jquery-3.3.1.min.js','assets/js/popper.min.js','assets/js/bootstrap.min.js','assets/js/syaq.js'] | theme}}"></script>
+        {% framework extras %}
+         {% placeholder bodyend %}
+    </body>
+</html>";s:4:"code";s:215:"function onStart(){
+	$lookups = \Worcbox\StaticData\Models\Lookup::all();
+	foreach($lookups as $lookup) {
+		$this[str_replace(".", "_", $lookup->code)] = ['key' => $lookup->key, 'value' => $lookup->value];
+	}
+}";s:10:"staticPage";a:2:{s:10:"useContent";s:1:"1";s:7:"default";s:1:"1";}s:7:"session";a:1:{s:8:"security";s:3:"all";}}}

@@ -1,0 +1,10 @@
+name: Fields
+form: $/worcbox/syaq/models/field/fields.yaml
+modelClass: Worcbox\Syaq\Models\Field
+defaultRedirect: worcbox/syaq/fields
+create:
+    redirect: 'worcbox/syaq/fields/update/:id'
+    redirectClose: worcbox/syaq/fields
+update:
+    redirect: worcbox/syaq/fields
+    redirectClose: worcbox/syaq/fields

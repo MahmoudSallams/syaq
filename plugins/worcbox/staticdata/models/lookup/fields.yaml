@@ -1,0 +1,17 @@
+fields:
+    key:
+        label: Key
+        span: auto
+        type: text
+    code:
+        label: Code
+        span: auto
+        context:
+            - create
+            - preview
+        type: text
+    value:
+        label: Value
+        size: small
+        span: full
+        type: textarea

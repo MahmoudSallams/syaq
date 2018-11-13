@@ -1,0 +1,9 @@
+{% set items = __SELF__.items %}
+{% for item in items %}
+<div class="col-md-4 why-us-item">
+    <img src="{{'assets/imgs/services/shape2x-1.png'| theme}}">
+
+    <h3>{{item.title}}</h3>
+    <p>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي </p>
+</div>
+{% endfor %}

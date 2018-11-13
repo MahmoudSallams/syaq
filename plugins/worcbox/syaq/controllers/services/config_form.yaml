@@ -1,0 +1,10 @@
+name: Services
+form: $/worcbox/syaq/models/service/fields.yaml
+modelClass: Worcbox\Syaq\Models\Service
+defaultRedirect: worcbox/syaq/services
+create:
+    redirect: 'worcbox/syaq/services/update/:id'
+    redirectClose: worcbox/syaq/services
+update:
+    redirect: worcbox/syaq/services
+    redirectClose: worcbox/syaq/services

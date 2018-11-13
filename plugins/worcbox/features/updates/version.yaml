@@ -1,0 +1,23 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table worcbox_features_'
+    - builder_table_create_worcbox_features_.php
+1.0.3:
+    - 'Updated table worcbox_features_'
+    - builder_table_update_worcbox_features_items.php
+1.0.4:
+    - 'Updated table worcbox_features_items'
+    - builder_table_update_worcbox_features_items_2.php
+1.0.5:
+    - 'Updated table worcbox_features_items'
+    - builder_table_update_worcbox_features_items_3.php
+1.0.6:
+    - 'Updated table worcbox_features_items'
+    - builder_table_update_worcbox_features_items_4.php
+1.0.7:
+    - 'Updated table worcbox_features_items'
+    - builder_table_update_worcbox_features_items_5.php
+1.0.8:
+    - 'Updated table worcbox_features_items'
+    - builder_table_update_worcbox_features_items_6.php

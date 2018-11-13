@@ -1,0 +1,61 @@
+1542016855a:1:{s:12:"packages.htm";a:10:{s:8:"fileName";s:12:"packages.htm";s:7:"content";s:1039:"title = "Packages"
+url = "/packages"
+layout = "default"
+is_hidden = 0
+
+[Worcbox\Packages\Components\Items packages]
+count = 0
+==
+<section class="page-banner second-22">
+	<div class="container">
+		<div class="bread">
+			<h3>باقاتنا</h3>
+		</div>
+	</div>
+</section>
+<section class="section pricing-table light-bg">
+	<div class="container">
+		<div class="row packages">
+			{% set items = packages.items %}
+			{% for package in items %}
+			  <div class="col-sm-4">
+				<div class="price-table second-bg">
+				<p class="p-l title main-color2"><b>{{package.title}}</b></p>
+				<p class="start-price"><b> <span class="price main-color"><span>SR</span>{{package.price}}</span> 
+				<span class="per">شهرياً</span></b></p>
+				<p class="p-l s5">{{package.line_1}}</p>
+				<p class="p-l s5">{{package.line_2}}</p>
+				<p class="p-l s5">{{package.line_3}}</p>
+				<a href="{{'package' | page({id:package.id})}} " class="btn">ابدأ الان</a>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>";s:5:"mtime";i:1536690708;s:6:"markup";s:910:"<section class="page-banner second-22">
+	<div class="container">
+		<div class="bread">
+			<h3>باقاتنا</h3>
+		</div>
+	</div>
+</section>
+<section class="section pricing-table light-bg">
+	<div class="container">
+		<div class="row packages">
+			{% set items = packages.items %}
+			{% for package in items %}
+			  <div class="col-sm-4">
+				<div class="price-table second-bg">
+				<p class="p-l title main-color2"><b>{{package.title}}</b></p>
+				<p class="start-price"><b> <span class="price main-color"><span>SR</span>{{package.price}}</span> 
+				<span class="per">شهرياً</span></b></p>
+				<p class="p-l s5">{{package.line_1}}</p>
+				<p class="p-l s5">{{package.line_2}}</p>
+				<p class="p-l s5">{{package.line_3}}</p>
+				<a href="{{'package' | page({id:package.id})}} " class="btn">ابدأ الان</a>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>";s:4:"code";N;s:5:"title";s:8:"Packages";s:3:"url";s:9:"/packages";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:42:"Worcbox\Packages\Components\Items packages";a:1:{s:5:"count";s:1:"0";}}}

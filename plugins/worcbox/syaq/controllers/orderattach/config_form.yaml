@@ -1,0 +1,12 @@
+name: OrderAttach
+form: $/worcbox/syaq/models/orderattachment/attach_fields.yaml
+modelClass: Worcbox\Syaq\Models\OrderAttachment
+defaultRedirect: worcbox/syaq/orderattach
+create:
+#    redirect: 'worcbox/syaq/orderAssigning/update/:order_id'
+#    redirectClose: 'worcbox/syaq/orderAssigning/update/:order_id'
+    redirectClose: worcbox/syaq/orders/running
+update:
+#    redirect: 'worcbox/syaq/orderAssigning/update/:order_id'
+#    redirectClose: 'worcbox/syaq/orderAssigning/update/:order_id'
+    redirectClose: worcbox/syaq/orders/running

@@ -1,0 +1,50 @@
+name: 'Footer 2'
+items:
+    -
+        title: 'اطلب محتوى'
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: ''
+        reference: request
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: الباقات
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: ''
+        reference: packages
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: الخدمات
+        type: cms-page
+        code: services
+        reference: services
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'اتصل بنا'
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: ''
+        reference: contact
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'

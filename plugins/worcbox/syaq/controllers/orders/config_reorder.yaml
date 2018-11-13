@@ -1,0 +1,5 @@
+title: Orders
+nameFrom: id
+modelClass: Worcbox\Syaq\Models\Order
+toolbar:
+    buttons: reorder_toolbar

@@ -1,0 +1,17 @@
+columns:
+    title:
+        label: Title
+        type: text
+        searchable: true
+    description:
+        label: Description
+        type: text
+    icon:
+        label: Icon
+        type: partial
+        path: $/worcbox/features/models/item/icon_column.htm
+    type:
+        label: Type
+        type: text
+        searchable: true
+        sortable: true

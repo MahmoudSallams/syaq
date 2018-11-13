@@ -1,0 +1,62 @@
+1542016856a:1:{s:13:"testlogin.htm";a:11:{s:8:"fileName";s:13:"testlogin.htm";s:7:"content";s:902:"title = "TestLogin"
+url = "/testlogin"
+layout = "default"
+is_hidden = 0
+
+[session]
+security = "all"
+redirect = "home"
+
+[account]
+paramCode = "code"
+forceSecure = 0
+==
+<?php
+function onEnd(){
+	$orderObject = Worcbox\Syaq\Models\Order::make(['total' => 2]);
+	print_r($orderObject);
+	exit();
+	$order = Illuminate\Support\Facades\Session::get('order');
+	if (!isset($order['user_id']) || empty($order['user_id'])){
+		if (Auth::check()){
+			$loggedInUser = Auth::getUser();
+			$order['user_id'] = $loggedInUser['id'];
+		} else {
+			return Redirect::to('login');
+		}
+	}
+	Illuminate\Support\Facades\Session::put('order', $order);
+	$this['order'] = $order;
+}
+?>
+==
+{% if user %}
+    <p>Hello {{ user.name }}</p>
+    <a data-request="onLogout" data-request-data="redirect: '/good-bye'">Sign out</a>
+{% else %}
+    <p>Nobody is logged in</p>
+{% endif %}
+{% component 'account' %}
+{{ hello }}";s:5:"mtime";i:1536690708;s:6:"markup";s:231:"{% if user %}
+    <p>Hello {{ user.name }}</p>
+    <a data-request="onLogout" data-request-data="redirect: '/good-bye'">Sign out</a>
+{% else %}
+    <p>Nobody is logged in</p>
+{% endif %}
+{% component 'account' %}
+{{ hello }}";s:4:"code";s:491:"function onEnd(){
+	$orderObject = Worcbox\Syaq\Models\Order::make(['total' => 2]);
+	print_r($orderObject);
+	exit();
+	$order = Illuminate\Support\Facades\Session::get('order');
+	if (!isset($order['user_id']) || empty($order['user_id'])){
+		if (Auth::check()){
+			$loggedInUser = Auth::getUser();
+			$order['user_id'] = $loggedInUser['id'];
+		} else {
+			return Redirect::to('login');
+		}
+	}
+	Illuminate\Support\Facades\Session::put('order', $order);
+	$this['order'] = $order;
+}";s:5:"title";s:9:"TestLogin";s:3:"url";s:10:"/testlogin";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:7:"session";a:2:{s:8:"security";s:3:"all";s:8:"redirect";s:4:"home";}s:7:"account";a:2:{s:9:"paramCode";s:4:"code";s:11:"forceSecure";s:1:"0";}}}

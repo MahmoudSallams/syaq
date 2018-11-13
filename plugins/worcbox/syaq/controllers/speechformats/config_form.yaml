@@ -1,0 +1,10 @@
+name: SpeechFormats
+form: $/worcbox/syaq/models/speechformat/fields.yaml
+modelClass: Worcbox\Syaq\Models\SpeechFormat
+defaultRedirect: worcbox/syaq/speechformats
+create:
+    redirect: 'worcbox/syaq/speechformats/update/:id'
+    redirectClose: worcbox/syaq/speechformats
+update:
+    redirect: worcbox/syaq/speechformats
+    redirectClose: worcbox/syaq/speechformats

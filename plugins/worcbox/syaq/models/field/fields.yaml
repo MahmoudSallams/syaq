@@ -1,0 +1,5 @@
+fields:
+    name:
+        label: 'Field Name'
+        span: auto
+        type: text

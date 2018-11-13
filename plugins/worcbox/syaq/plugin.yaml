@@ -1,0 +1,94 @@
+plugin:
+    name: 'worcbox.syaq::lang.plugin.name'
+    description: 'worcbox.syaq::lang.plugin.description'
+    author: Worcbox
+    icon: oc-icon-shopping-cart
+    homepage: ''
+navigation:
+    main-menu-order-settings:
+        label: 'Orders Settings'
+        url: worcbox/syaq/services
+        icon: icon-gear
+        permissions:
+            - 'worcbox.syaq.orderSettings.*'
+        sideMenu:
+            services:
+                label: Services
+                url: worcbox/syaq/services
+                icon: icon-gears
+            fields:
+                label: Fields
+                url: worcbox/syaq/fields
+                icon: icon-list-ul
+            audience-genders:
+                label: 'Audience Genders'
+                url: worcbox/syaq/audiencegenders
+                icon: icon-users
+            speech-formats:
+                label: 'Speech Formats'
+                url: worcbox/syaq/speechformats
+                icon: icon-language
+            typing-modes:
+                label: 'Typing Modes'
+                url: worcbox/syaq/typingmodes
+                icon: icon-file-text-o
+            title-fields:
+                label: 'Title Fields'
+                url: worcbox/syaq/titlefields
+                icon: icon-list-ul
+    main-menu-orders:
+        label: Orders
+        url: worcbox/syaq/orders/running
+        icon: icon-shopping-cart
+        permissions:
+            - 'worcbox.syaq.orders.*'
+        sideMenu:
+            unassigned:
+                label: New
+                url: worcbox/syaq/orders/unassigned
+                icon: icon-star
+                permissions:
+                    - worcbox.syaq.orders.list.new
+            running:
+                label: Running
+                url: worcbox/syaq/orders/running
+                icon: icon-pencil
+                permissions:
+                    - worcbox.syaq.orders.list.running
+            finished:
+                label: Finished
+                url: worcbox/syaq/orders/finished
+                icon: icon-check
+                permissions:
+                    - worcbox.syaq.orders.list.finished
+            archived:
+                label: Archived
+                url: worcbox/syaq/orders/archived
+                icon: icon-archive
+                permissions:
+                    - worcbox.syaq.orders.list.archived
+permissions:
+    worcbox.syaq.orders.list.new:
+        tab: Orders
+        label: 'View New Orders'
+    worcbox.syaq.orders.list.running:
+        tab: Orders
+        label: 'View Running Orders'
+    worcbox.syaq.orders.list.finished:
+        tab: Orders
+        label: 'View Finished Orders'
+    worcbox.syaq.orders.list.archived:
+        tab: Orders
+        label: 'View Archived Orders'
+    worcbox.syaq.orderSettings.edit:
+        tab: Orders
+        label: 'Edit Order Settings'
+    worcbox.syaq.orders.edit:
+        tab: Orders
+        label: 'Delete an order from Back-End'
+    worcbox.syaq.orders.createAttachment:
+        tab: Orders
+        label: 'Allow user to create attachments'
+    worcbox.syaq.orders.addAttachmentNote:
+        tab: Orders
+        label: 'Allow user to add note to  Attachments'

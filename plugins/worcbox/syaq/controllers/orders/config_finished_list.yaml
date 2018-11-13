@@ -1,0 +1,12 @@
+list: $/worcbox/syaq/models/order/finished_columns.yaml
+modelClass: Worcbox\Syaq\Models\Order
+title: Running
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'worcbox/syaq/orderAssigning/update/:id'

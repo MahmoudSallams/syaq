@@ -1,0 +1,60 @@
+
+<?php if (BackendAuth::getUser()->hasAccess('worcbox.syaq.orders.createAttachment')) : ?>
+<a class="btn btn-primary pull-right" href="<?= Backend::url('worcbox/syaq/orderattach/create/'. $model->id) ?>">Upload Attachment</a>
+<?php endif;  ?>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Content
+            </th>
+            <th>
+                Implementer
+            </th>
+            <th>
+                Created At
+            </th>
+            <th>
+                Reviewer
+            </th>
+            <th colspan="2">
+                Note
+            </th>
+            <th>
+                Modified At
+            </th>
+        </tr>
+    </thead>
+    <?php $items = $model->OrderAttachments ?>
+    <?php foreach($items as $item): ?>
+    <tr>
+        <td><?= $item->id ?></td>
+        <td><a class="btn btn-default" href="<?= $item->content['path'] ?>" download="<?= $item->content['file_name'] ?>"><i class="icon-download"></i></a></td>
+        <td>
+            <?php if($item->Implementer): ?>
+            <?= $item->Implementer->first_name ?> <?= $item->Implementer->last_name ?>
+            <?php else: ?>
+            --
+            <?php endif; ?>
+        </td>
+        <td><?= $item->created_at ?></td>
+        <td>
+            <?php if($item->Reviewer): ?>
+            <?= $item->Reviewer->first_name ?> <?= $item->Reviewer->last_name ?>
+            <?php else: ?>
+            --
+            <?php endif; ?>
+        </td>
+        <td><?= $item->note ?></td>
+        <td>
+            <?php if (BackendAuth::getUser()->hasAccess('worcbox.syaq.orders.addAttachmentNote')) : ?>
+            <a class="btn btn-primary" href="<?= Backend::url('worcbox/syaq/orderattach/update/'. $item->id) ?>"><i class="icon-edit"></i></a>
+            <?php endif; ?>
+        </td>
+        <td><?= $item->updated_at ?></td>
+    </tr>
+    <?php endforeach; ?>
+</table>

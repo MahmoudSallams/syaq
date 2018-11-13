@@ -1,0 +1,36 @@
+tabs:
+    fields:
+        title:
+            label: Title
+            span: left
+            required: 1
+            type: text
+            tab: Data
+        type:
+            label: Type
+            options:
+                feature: Feature
+                team: Team
+                tab: Tab
+            emptyOption: 'Select Type'
+            span: auto
+            type: dropdown
+            tab: Data
+        description:
+            label: Description
+            size: small
+            span: full
+            required: 1
+            type: textarea
+            tab: Data
+        icon:
+            label: Icon
+            mode: file
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: full
+            required: 1
+            type: fileupload
+            tab: Data

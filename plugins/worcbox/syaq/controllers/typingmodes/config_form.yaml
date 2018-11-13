@@ -1,0 +1,10 @@
+name: TypingModes
+form: $/worcbox/syaq/models/typingmode/fields.yaml
+modelClass: Worcbox\Syaq\Models\TypingMode
+defaultRedirect: worcbox/syaq/typingmodes
+create:
+    redirect: 'worcbox/syaq/typingmodes/update/:id'
+    redirectClose: worcbox/syaq/typingmodes
+update:
+    redirect: worcbox/syaq/typingmodes
+    redirectClose: worcbox/syaq/typingmodes

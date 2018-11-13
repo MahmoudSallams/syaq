@@ -1,0 +1,33 @@
+plugin:
+    name: 'worcbox.packages::lang.plugin.name'
+    description: 'worcbox.packages::lang.plugin.description'
+    author: Worcbox
+    icon: oc-icon-suitcase
+    homepage: ''
+navigation:
+    main-menu-packages:
+        label: Packages
+        url: worcbox/packages/items/
+        icon: icon-briefcase
+        permissions:
+            - 'worcbox.packages.*'
+        sideMenu:
+            side-menu-item2:
+                label: Create
+                url: worcbox/packages/items/create
+                icon: icon-plus
+                permissions:
+                    - worcbox.packages.create
+            side-menu-item:
+                label: List
+                url: worcbox/packages/items/
+                icon: icon-list
+                permissions:
+                    - worcbox.packages.list
+permissions:
+    worcbox.packages.list:
+        tab: Packages
+        label: 'View List'
+    worcbox.packages.create:
+        tab: Packages
+        label: 'Create Items'

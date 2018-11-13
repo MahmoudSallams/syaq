@@ -1,0 +1,12 @@
+fields:
+    field_id:
+        label: Text
+        span: auto
+        type: text
+    Service:
+        label: Service
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        disabled: disabled
+        type: relation

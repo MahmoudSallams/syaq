@@ -1,0 +1,278 @@
+1542016856a:1:{s:9:"order.htm";a:11:{s:8:"fileName";s:9:"order.htm";s:7:"content";s:5222:"title = "Order"
+url = "/order/:id"
+layout = "default"
+is_hidden = 0
+
+[session]
+security = "all"
+
+[staticMenu]
+code = "account-menu"
+==
+<?php
+function onStart(){
+	$id = $this->param('id');
+	if (!$id){
+		// error
+	} else {
+		$foundOrder = \Worcbox\Syaq\Models\Order::find($id);
+		if (!$foundOrder){
+			// error
+		} else {
+			$this['order'] = $foundOrder;
+		}
+	}
+}
+?>
+==
+{% component 'session' %}
+<section class="page-banner second-22">
+	<div class="container">
+		<div class="bread">
+			<h3>بيانات الطلب</h3>
+		</div>
+	</div>
+</section>
+
+<section class="light-bg text-right">
+	<br/><br/>
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			<div class="card">
+			  <div class="card-header">
+			    حسابى
+			  </div>
+				
+			{% if staticMenu.menuItems %}
+			    <div class="list-group list-group-flush">
+			    	{% for item in staticMenu.menuItems %}
+			    		<a class="list-group-item list-group-item-action {{item.isActive?"active":''}}" href="{{item.url}}">{{item.title}}</a>
+			    	{% endfor %}
+			    </div>
+			{% endif %}
+			</div>
+		</div>
+		<div class="col-md-8">
+			<div class="bg-white">
+    <div class="sy-box">
+        <div class="sy-flex-container" >
+            <div class="sy-item-3-of-3-col">
+                <div class="sy-user-box">
+                    <h4 id="sy-total-price"></h4>
+                    <table class="orderconfirm">
+                        <tbody>
+                            <tr>
+                                <td >اسم العميل</td>
+                                <td >{{ user.name }}</td>
+                            </tr>
+                            <tr>
+                                <td>البريد الالكترونى</td>
+                                <td>{{ user.email }}</td>
+                            </tr>
+                            <tr>
+                                <td>تاريخ الطلب</td>
+                                <td>{{ order.created_at }}</td>
+                            </tr>
+                            <tr>
+                                <td>مدة التنفيذ بالايام</td>
+                                <td>{{ order.days_count }} يوم</td>
+                            </tr>
+                            <tr>
+                                <td>نوع الطلب</td>
+                                <td>{{ order.Service.name }}</td>
+                            </tr>
+                            <tr>
+                                <td>الموضوع</td>
+                                <td>{{ order.topic }}</td>
+                            </tr>
+                            <tr>
+                                <td>المجال</td>
+                                <td>{{ order.Field.name }}</td>
+                            </tr>
+                            <tr>
+                                <td>صيغة الطلب</td>
+                                <td>{{ order.SpeechFormat.name }}</td>
+                            </tr>
+                            <tr>
+                                <td>جنس الجمهور المخاطب</td>
+                                <td>{{ order.AudienceGender.name }} </td>
+                            </tr>
+                            <tr>
+                                <td>هوية الجمهور المخاطب</td>
+                                <td>{{ order.audience_identification }}</td>
+                            </tr>
+                            <tr>
+                                <td>مجال العنوان</td>
+                                <td>{{ order.TitleField.name }}</td>
+                            </tr>
+                            <tr>
+                                <td>نوع الكتاب المفضل</td>
+                                <td>{{ order.TypingMode.name }}</td>
+                            </tr>
+                            <tr>
+                                <td>عدد الكلمات</td>
+                                <td>{{ order.words_count }}</td>
+                            </tr>
+                            <tr>
+                                <td>الكمية</td>
+                                <td>{{ order.quantity }}</td>
+                            </tr>
+                            <tr>
+                                <td>سرعة التسليم</td>
+                                <td>{{ order.express ? "سريع" : "عادى"}}</td>
+                            </tr>
+                            <tr>
+                                <td>الجودة</td>
+                                <td>{{ order.high_quality ? "متميز" : "عادى"}}</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td >اجمالى قيمة الطلب</td>
+                                <td >SR {{ order.total }}</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+		</div>
+	</div>
+</div>
+<br/><br/>
+</section>";s:5:"mtime";i:1536690708;s:6:"markup";s:4842:"{% component 'session' %}
+<section class="page-banner second-22">
+	<div class="container">
+		<div class="bread">
+			<h3>بيانات الطلب</h3>
+		</div>
+	</div>
+</section>
+
+<section class="light-bg text-right">
+	<br/><br/>
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			<div class="card">
+			  <div class="card-header">
+			    حسابى
+			  </div>
+				
+			{% if staticMenu.menuItems %}
+			    <div class="list-group list-group-flush">
+			    	{% for item in staticMenu.menuItems %}
+			    		<a class="list-group-item list-group-item-action {{item.isActive?"active":''}}" href="{{item.url}}">{{item.title}}</a>
+			    	{% endfor %}
+			    </div>
+			{% endif %}
+			</div>
+		</div>
+		<div class="col-md-8">
+			<div class="bg-white">
+    <div class="sy-box">
+        <div class="sy-flex-container" >
+            <div class="sy-item-3-of-3-col">
+                <div class="sy-user-box">
+                    <h4 id="sy-total-price"></h4>
+                    <table class="orderconfirm">
+                        <tbody>
+                            <tr>
+                                <td >اسم العميل</td>
+                                <td >{{ user.name }}</td>
+                            </tr>
+                            <tr>
+                                <td>البريد الالكترونى</td>
+                                <td>{{ user.email }}</td>
+                            </tr>
+                            <tr>
+                                <td>تاريخ الطلب</td>
+                                <td>{{ order.created_at }}</td>
+                            </tr>
+                            <tr>
+                                <td>مدة التنفيذ بالايام</td>
+                                <td>{{ order.days_count }} يوم</td>
+                            </tr>
+                            <tr>
+                                <td>نوع الطلب</td>
+                                <td>{{ order.Service.name }}</td>
+                            </tr>
+                            <tr>
+                                <td>الموضوع</td>
+                                <td>{{ order.topic }}</td>
+                            </tr>
+                            <tr>
+                                <td>المجال</td>
+                                <td>{{ order.Field.name }}</td>
+                            </tr>
+                            <tr>
+                                <td>صيغة الطلب</td>
+                                <td>{{ order.SpeechFormat.name }}</td>
+                            </tr>
+                            <tr>
+                                <td>جنس الجمهور المخاطب</td>
+                                <td>{{ order.AudienceGender.name }} </td>
+                            </tr>
+                            <tr>
+                                <td>هوية الجمهور المخاطب</td>
+                                <td>{{ order.audience_identification }}</td>
+                            </tr>
+                            <tr>
+                                <td>مجال العنوان</td>
+                                <td>{{ order.TitleField.name }}</td>
+                            </tr>
+                            <tr>
+                                <td>نوع الكتاب المفضل</td>
+                                <td>{{ order.TypingMode.name }}</td>
+                            </tr>
+                            <tr>
+                                <td>عدد الكلمات</td>
+                                <td>{{ order.words_count }}</td>
+                            </tr>
+                            <tr>
+                                <td>الكمية</td>
+                                <td>{{ order.quantity }}</td>
+                            </tr>
+                            <tr>
+                                <td>سرعة التسليم</td>
+                                <td>{{ order.express ? "سريع" : "عادى"}}</td>
+                            </tr>
+                            <tr>
+                                <td>الجودة</td>
+                                <td>{{ order.high_quality ? "متميز" : "عادى"}}</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td >اجمالى قيمة الطلب</td>
+                                <td >SR {{ order.total }}</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+		</div>
+	</div>
+</div>
+<br/><br/>
+</section>";s:4:"code";s:232:"function onStart(){
+	$id = $this->param('id');
+	if (!$id){
+		// error
+	} else {
+		$foundOrder = \Worcbox\Syaq\Models\Order::find($id);
+		if (!$foundOrder){
+			// error
+		} else {
+			$this['order'] = $foundOrder;
+		}
+	}
+}";s:5:"title";s:5:"Order";s:3:"url";s:10:"/order/:id";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:7:"session";a:1:{s:8:"security";s:3:"all";}s:10:"staticMenu";a:1:{s:4:"code";s:12:"account-menu";}}}

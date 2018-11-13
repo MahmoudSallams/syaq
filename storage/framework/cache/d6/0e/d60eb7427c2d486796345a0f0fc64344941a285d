@@ -1,0 +1,51 @@
+1542016858a:1:{s:13:"footer-2.yaml";a:7:{s:8:"fileName";s:13:"footer-2.yaml";s:7:"content";s:1066:"name: 'Footer 2'
+items:
+    -
+        title: 'اطلب محتوى'
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: ''
+        reference: request
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: الباقات
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: ''
+        reference: packages
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: الخدمات
+        type: cms-page
+        code: services
+        reference: services
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'اتصل بنا'
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: ''
+        reference: contact
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+";s:5:"mtime";i:1536690708;s:6:"markup";N;s:4:"code";N;s:4:"name";s:8:"Footer 2";s:5:"items";a:4:{i:0;O:30:"RainLab\Pages\Classes\MenuItem":13:{s:5:"title";s:19:"اطلب محتوى";s:5:"items";a:0:{}s:6:"parent";N;s:7:"nesting";s:0:"";s:4:"type";s:8:"cms-page";s:3:"url";s:0:"";s:4:"code";s:0:"";s:9:"reference";s:7:"request";s:7:"replace";s:0:"";s:7:"cmsPage";s:0:"";s:6:"exists";b:0;s:8:"fillable";a:9:{i:0;s:5:"title";i:1;s:7:"nesting";i:2;s:4:"type";i:3;s:3:"url";i:4;s:4:"code";i:5;s:9:"reference";i:6;s:7:"cmsPage";i:7;s:7:"replace";i:8;s:7:"viewBag";}s:7:"viewBag";a:3:{s:8:"isHidden";s:1:"0";s:8:"cssClass";s:0:"";s:10:"isExternal";s:1:"0";}}i:1;O:30:"RainLab\Pages\Classes\MenuItem":13:{s:5:"title";s:14:"الباقات";s:5:"items";a:0:{}s:6:"parent";N;s:7:"nesting";s:0:"";s:4:"type";s:8:"cms-page";s:3:"url";s:0:"";s:4:"code";s:0:"";s:9:"reference";s:8:"packages";s:7:"replace";s:0:"";s:7:"cmsPage";s:0:"";s:6:"exists";b:0;s:8:"fillable";a:9:{i:0;s:5:"title";i:1;s:7:"nesting";i:2;s:4:"type";i:3;s:3:"url";i:4;s:4:"code";i:5;s:9:"reference";i:6;s:7:"cmsPage";i:7;s:7:"replace";i:8;s:7:"viewBag";}s:7:"viewBag";a:3:{s:8:"isHidden";s:1:"0";s:8:"cssClass";s:0:"";s:10:"isExternal";s:1:"0";}}i:2;O:30:"RainLab\Pages\Classes\MenuItem":13:{s:5:"title";s:14:"الخدمات";s:5:"items";a:0:{}s:6:"parent";N;s:7:"nesting";N;s:4:"type";s:8:"cms-page";s:3:"url";N;s:4:"code";s:8:"services";s:9:"reference";s:8:"services";s:7:"replace";N;s:7:"cmsPage";N;s:6:"exists";b:0;s:8:"fillable";a:9:{i:0;s:5:"title";i:1;s:7:"nesting";i:2;s:4:"type";i:3;s:3:"url";i:4;s:4:"code";i:5;s:9:"reference";i:6;s:7:"cmsPage";i:7;s:7:"replace";i:8;s:7:"viewBag";}s:7:"viewBag";a:3:{s:8:"isHidden";s:1:"0";s:8:"cssClass";s:0:"";s:10:"isExternal";s:1:"0";}}i:3;O:30:"RainLab\Pages\Classes\MenuItem":13:{s:5:"title";s:15:"اتصل بنا";s:5:"items";a:0:{}s:6:"parent";N;s:7:"nesting";s:0:"";s:4:"type";s:8:"cms-page";s:3:"url";s:0:"";s:4:"code";s:0:"";s:9:"reference";s:7:"contact";s:7:"replace";s:0:"";s:7:"cmsPage";s:0:"";s:6:"exists";b:0;s:8:"fillable";a:9:{i:0;s:5:"title";i:1;s:7:"nesting";i:2;s:4:"type";i:3;s:3:"url";i:4;s:4:"code";i:5;s:9:"reference";i:6;s:7:"cmsPage";i:7;s:7:"replace";i:8;s:7:"viewBag";}s:7:"viewBag";a:3:{s:8:"isHidden";s:1:"0";s:8:"cssClass";s:0:"";s:10:"isExternal";s:1:"0";}}}}}

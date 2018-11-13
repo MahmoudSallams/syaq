@@ -1,0 +1,64 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Status
+            </th>
+            <th>
+                Manager
+            </th>
+            <th>
+                Reviewer
+            </th>
+            <th>
+                Implementer
+            </th>
+            <th>
+                Attachment
+            </th>
+            <th >
+                Note
+            </th>
+            <th>
+                Date
+            </th>
+        </tr>
+    </thead>
+    <?php $items = $model->OrderHistories ?>
+    <?php foreach($items as $item): ?>
+    <tr>
+        <td><?= $item->status ?></td>
+        <td>
+            <?php if($item->Manager): ?>
+            <?= $item->Manager->first_name ?> <?= $item->Manager->last_name ?>
+            <?php else: ?>
+            --
+            <?php endif; ?>
+        </td>
+        <td>
+            <?php if($item->Reviewer): ?>
+            <?= $item->Reviewer->first_name ?> <?= $item->Reviewer->last_name ?>
+            <?php else: ?>
+            --
+            <?php endif; ?>
+        </td>
+        <td>
+            <?php if($item->Implementer): ?>
+            <?= $item->Implementer->first_name ?> <?= $item->Implementer->last_name ?>
+            <?php else: ?>
+            --
+            <?php endif; ?>
+        </td>
+        
+        <td>
+            <?php if($item->OrderAttachment): ?>
+                <?= $item->OrderAttachment->id ?>
+            <?php else: ?>
+                --
+            <?php endif; ?>
+        </td>
+        <td><?= $item->note ?></td>
+        <td><?= $item->created_at ?></td>
+    </tr>
+    <?php endforeach; ?>
+</table>

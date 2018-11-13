@@ -1,0 +1,10 @@
+name: TitleFields
+form: $/worcbox/syaq/models/titlefield/fields.yaml
+modelClass: Worcbox\Syaq\Models\TitleField
+defaultRedirect: worcbox/syaq/titlefields
+create:
+    redirect: 'worcbox/syaq/titlefields/update/:id'
+    redirectClose: worcbox/syaq/titlefields
+update:
+    redirect: worcbox/syaq/titlefields
+    redirectClose: worcbox/syaq/titlefields

@@ -1,0 +1,35 @@
+title = "Package"
+url = "/package/:id"
+layout = "default"
+is_hidden = 0
+
+[package]
+param = "id"
+==
+{% set item = package.item %}
+<section class="page-banner second-22">
+	<div class="container">
+		<div class="bread">
+			<h3>{{item.title}}</h3>
+		</div>
+	</div>
+</section>
+<section class="in-page">
+	<div class="container">
+		<div class="row justify-content-between">
+			<div class="col-auto">
+				<ul>
+					<li>{{item.line_1}}</li>
+					<li>{{item.line_2}}</li>
+					<li>{{item.line_3}}</li>
+				</ul>
+			</div>
+			<div class="col-auto">
+				<p class="start-price"><b> <span class="price main-color"><span>SR</span>{{item.price}}</span> 
+				<span class="per">شهرياً</span></b></p>
+			</div>
+		</div>
+		<br/><br/>
+		<p>{{item.description}}</p>
+	</div>
+</section>

@@ -1,0 +1,55 @@
+1542016855a:1:{s:8:"team.htm";a:10:{s:8:"fileName";s:8:"team.htm";s:7:"content";s:728:"title = "Team"
+url = "/team"
+layout = "default"
+is_hidden = 0
+
+[Worcbox\Features\Components\Items items]
+type = "team"
+==
+{% set items = items.items %}
+<section class="page-banner second-22">
+	<div class="container">
+		<div class="bread">
+			<h3>فريق العمل</h3>
+		</div>
+	</div>
+</section>
+<br/><br/>
+<div class="container">
+	<div class="row">
+		{% for item in items %}
+		<div class="col-12 col-md-4">
+			<div class="team card mb-4">
+				<img class="card-img-top" src=" {{item.icon.thumb(300,300,'crop')}}" />
+				<div class="card-body">
+					<h3 class="card-title">{{item.title}}</h3>
+					<p class="card-text">{{item.description}}</p>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>";s:5:"mtime";i:1536690708;s:6:"markup";s:606:"{% set items = items.items %}
+<section class="page-banner second-22">
+	<div class="container">
+		<div class="bread">
+			<h3>فريق العمل</h3>
+		</div>
+	</div>
+</section>
+<br/><br/>
+<div class="container">
+	<div class="row">
+		{% for item in items %}
+		<div class="col-12 col-md-4">
+			<div class="team card mb-4">
+				<img class="card-img-top" src=" {{item.icon.thumb(300,300,'crop')}}" />
+				<div class="card-body">
+					<h3 class="card-title">{{item.title}}</h3>
+					<p class="card-text">{{item.description}}</p>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>";s:4:"code";N;s:5:"title";s:4:"Team";s:3:"url";s:5:"/team";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:39:"Worcbox\Features\Components\Items items";a:1:{s:4:"type";s:4:"team";}}}

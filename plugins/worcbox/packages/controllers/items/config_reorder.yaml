@@ -1,0 +1,4 @@
+title: Items
+modelClass: Worcbox\Packages\Models\Item
+toolbar:
+    buttons: reorder_toolbar

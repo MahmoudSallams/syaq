@@ -1,0 +1,12 @@
+list: $/worcbox/syaq/models/speechformat/columns.yaml
+modelClass: Worcbox\Syaq\Models\SpeechFormat
+title: SpeechFormats
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'worcbox/syaq/speechformats/update/:id'

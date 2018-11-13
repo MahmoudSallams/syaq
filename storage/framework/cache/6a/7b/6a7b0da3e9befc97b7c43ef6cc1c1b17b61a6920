@@ -1,0 +1,174 @@
+1542016856a:1:{s:11:"contact.htm";a:9:{s:8:"fileName";s:11:"contact.htm";s:7:"content";s:4023:"title = "Contact"
+url = "/contact"
+layout = "default"
+is_hidden = 0
+==
+<?php
+function onConfirm(){
+	if (Request::isMethod('post')) {
+		$data = Input::all();
+		$rules = [
+			'name' => 'required',
+			'email' => 'required|email',
+			'subject' => 'required',
+			'body' => 'required',
+			
+		];
+		$messages = [
+			'required' => 'حقل إلزامى',
+			'email' => 'البريد الإلكترونى غير صحيح'
+		];
+        $validator = Validator::make($data, $rules, $messages);
+        if ($validator->fails()) {
+            throw new October\Rain\Exception\ValidationException($validator);
+        }
+
+		$params = Input::all();
+        Illuminate\Support\Facades\Mail::sendTo('syaq.app@gmail.com', 'worcbox.syaq.contact::mail.message', $params);
+	}
+}
+?>
+==
+<section class="page-banner second-22">
+	<div class="container">
+		<div class="bread">
+			<h3>تواصل معنا</h3>
+		</div>
+	</div>
+</section>
+<br/><br/>
+<div class="container contact-us">
+    <div class="title">
+        <h2><b>تواصل معنا الأن</b></h2>
+        <p class="p-l">نحن دائماً هنا لمساعدتك</p>
+    </div>
+    <div class="row">
+        <div class="col-sm-5 m-b-mob-30">
+            <ul class="list-unstyled info-details contactdat">
+                <li class="block">
+                    <div class="text">
+                        <p class="p-l main-color2"><b>المملكة العربية السعودية</b></p>
+                        <p><i class="fa fa-home"></i>{{ contact_ksa_address['value'] }}</p>
+                        <p><i class="fa fa-phone"></i>{{ contact_ksa_phone['value'] }}</p>
+                        <p><i class="fa fa-fax"></i>{{ contact_ksa_fax['value'] }}</p>
+                        <p><i class="fa fa-envelope"></i>{{ contact_ksa_email['value'] }}</p>
+                        <br>
+
+                        <p class="p-l main-color2"><b>جمهورية مصر العربية</b></p>
+                        <p><i class="fa fa-home"></i>{{ contact_egypt_address['value'] }}</p>
+                        <p><i class="fa fa-phone"></i>{{ contact_egypt_phone['value'] }}</p>
+                        <p><i class="fa fa-fax"></i>{{ contact_egypt_fax['value'] }}</p>
+                        <p><i class="fa fa-envelope"></i>{{ contact_egypt_email['value'] }}</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-7">
+            <form class="form-til" data-request="onConfirm" method="post" novalidate data-request-validate >
+                <div class="form-group">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="الاسم" required="">
+                    <span style="color: red;" data-validate-for="name"></span>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" class="form-control" placeholder="البريد الالكترونى" required="">
+                    <span style="color: red;" data-validate-for="email"></span>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="عنوان الرسالة" name="subject" id="subject" paequired="">
+                    <span style="color: red;" data-validate-for="subject"></span>
+                </div>
+                <div class="form-group">
+                    <textarea name="body" class="form-control" id="body" placeholder="رسالتك" rows="14" required=""></textarea>
+                    <span style="color: red;" data-validate-for="body"></span>
+                </div>
+                <button type="submit" id="submit" name="submit" class="btn btn-warning">
+                    <span>ارسال</span>
+                    <i style="display: none;" id="ajax-spinner" class="icon ion-load-a"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+<br/><br/>";s:5:"mtime";i:1536690708;s:6:"markup";s:3242:"<section class="page-banner second-22">
+	<div class="container">
+		<div class="bread">
+			<h3>تواصل معنا</h3>
+		</div>
+	</div>
+</section>
+<br/><br/>
+<div class="container contact-us">
+    <div class="title">
+        <h2><b>تواصل معنا الأن</b></h2>
+        <p class="p-l">نحن دائماً هنا لمساعدتك</p>
+    </div>
+    <div class="row">
+        <div class="col-sm-5 m-b-mob-30">
+            <ul class="list-unstyled info-details contactdat">
+                <li class="block">
+                    <div class="text">
+                        <p class="p-l main-color2"><b>المملكة العربية السعودية</b></p>
+                        <p><i class="fa fa-home"></i>{{ contact_ksa_address['value'] }}</p>
+                        <p><i class="fa fa-phone"></i>{{ contact_ksa_phone['value'] }}</p>
+                        <p><i class="fa fa-fax"></i>{{ contact_ksa_fax['value'] }}</p>
+                        <p><i class="fa fa-envelope"></i>{{ contact_ksa_email['value'] }}</p>
+                        <br>
+
+                        <p class="p-l main-color2"><b>جمهورية مصر العربية</b></p>
+                        <p><i class="fa fa-home"></i>{{ contact_egypt_address['value'] }}</p>
+                        <p><i class="fa fa-phone"></i>{{ contact_egypt_phone['value'] }}</p>
+                        <p><i class="fa fa-fax"></i>{{ contact_egypt_fax['value'] }}</p>
+                        <p><i class="fa fa-envelope"></i>{{ contact_egypt_email['value'] }}</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-7">
+            <form class="form-til" data-request="onConfirm" method="post" novalidate data-request-validate >
+                <div class="form-group">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="الاسم" required="">
+                    <span style="color: red;" data-validate-for="name"></span>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" class="form-control" placeholder="البريد الالكترونى" required="">
+                    <span style="color: red;" data-validate-for="email"></span>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="عنوان الرسالة" name="subject" id="subject" paequired="">
+                    <span style="color: red;" data-validate-for="subject"></span>
+                </div>
+                <div class="form-group">
+                    <textarea name="body" class="form-control" id="body" placeholder="رسالتك" rows="14" required=""></textarea>
+                    <span style="color: red;" data-validate-for="body"></span>
+                </div>
+                <button type="submit" id="submit" name="submit" class="btn btn-warning">
+                    <span>ارسال</span>
+                    <i style="display: none;" id="ajax-spinner" class="icon ion-load-a"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+<br/><br/>";s:4:"code";s:697:"function onConfirm(){
+	if (Request::isMethod('post')) {
+		$data = Input::all();
+		$rules = [
+			'name' => 'required',
+			'email' => 'required|email',
+			'subject' => 'required',
+			'body' => 'required',
+			
+		];
+		$messages = [
+			'required' => 'حقل إلزامى',
+			'email' => 'البريد الإلكترونى غير صحيح'
+		];
+        $validator = Validator::make($data, $rules, $messages);
+        if ($validator->fails()) {
+            throw new October\Rain\Exception\ValidationException($validator);
+        }
+
+		$params = Input::all();
+        Illuminate\Support\Facades\Mail::sendTo('syaq.app@gmail.com', 'worcbox.syaq.contact::mail.message', $params);
+	}
+}";s:5:"title";s:7:"Contact";s:3:"url";s:8:"/contact";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";}}

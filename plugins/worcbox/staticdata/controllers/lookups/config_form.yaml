@@ -1,0 +1,10 @@
+name: Lookups
+form: $/worcbox/staticdata/models/lookup/fields.yaml
+modelClass: Worcbox\StaticData\Models\Lookup
+defaultRedirect: worcbox/staticdata/lookups
+create:
+    redirect: 'worcbox/staticdata/lookups/update/:id'
+    redirectClose: worcbox/staticdata/lookups
+update:
+    redirect: worcbox/staticdata/lookups
+    redirectClose: worcbox/staticdata/lookups

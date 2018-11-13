@@ -1,0 +1,204 @@
+{% set servicesList = __SELF__.activeServices %}
+{% set fieldsList = __SELF__.activeFields %}
+{% set audienceGendersList = __SELF__.activeAudienceGenders %}
+{% set typingModesList = __SELF__.activeTypingModes %}
+{% set titleFieldsList = __SELF__.activeTitleFields %}
+{% set speechFormatsList = __SELF__.activeSpeechFormats %}
+<div class="container">
+    <div class="sy-box">
+        <form id="sy-form" method="post"  data-request="onSubmit" data-request-validate novalidate>
+            <ul class="sy-wizard-items">
+                <li class="sy-wizard-item active">
+                    <span>1</span>نوع المحتوى
+                </li>
+                <li class="sy-wizard-item">
+                    <span>2</span>بيانات المحتوى
+                </li>
+                <li class="sy-wizard-item">
+                    <span>3</span>بيانات الحساب
+                </li>
+                <li class="sy-wizard-item">
+                    <span>4</span>تكملة الطلب
+                </li>
+            </ul>
+            <div class="row">
+                <div class="col-12 col-md-8">
+                    <div class="sy-items-box ">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-12 col-md-auto"><h2>اختر نوع الخدمة :</h2></div>
+                                <div class="col-12 col-md"><p>موقع سياق يقدم مختلف انواع المحتوى لموقعك أو شركتك ، برجاء اختيار نوع المحتوى الذي تود انشائه و استخدم لائحة الخصائص لتحديد ما تحتاجه</p></div>
+                            </div>
+                        </div>
+
+                        <div class="row sy-products">
+                            <input type="hidden" id="sy-input-type" value="" name="service_id"/>
+                            {% for service in servicesList%}
+                            <div class="col-12 col-md-4">
+                                <a data-id="{{service.id}}" data-price="{{service.basic_cost}}" data-step="{{service.extra_block_words_count}}" data-extra-price="{{service.extra_block_cost}}" data-price-hi-q="{{service.high_quality_cost}}"  data-price-fast="{{service.express_cost}}" data-days="{{service.basic_duration_in_days}}" data-days-fast="{{service.express_duration_in_days}}" data-min="{{service.minimum_words_count}}" >
+                                    {{service.name}}<br />
+                                    <span>{{ service.description }}</span>
+                                </a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="sy-data-box hidden">
+                        <h2>المزيد من المعلومات</h2>
+                        <div class="row sy-products">
+                            <div class="col-12 col-md-8">
+                                <label>الموضوع</label>
+                                <input type="text" class="sy-input" name="topic">
+                                <span style="color: red;" data-validate-for="topic"></span>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <label>المجال</label>
+                                <select class="sy-input" name="field_id">
+                                    <option value="">-- اختر --</option>
+                                    {% for item in fieldsList %}
+                                    <option value='{{ item.id }}'>{{ item.name }}</option>
+                                    {% endfor %}
+                                </select>
+                                <span style="color: red;" data-validate-for="field_id"></span>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <label>صيغة الخطاب</label>
+                                <select class="sy-input" name="speech_format_id">
+                                    <option value="">-- اختر --</option>
+                                    {% for item in speechFormatsList %}
+                                    <option value='{{ item.id }}'>{{ item.name }}</option>
+                                    {% endfor %}
+                                </select>
+                                <span style="color: red;" data-validate-for="speech_format_id"></span>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <label> جنس الجمهور المخاطب</label>
+                                <select class="sy-input" name="audience_gender_id">
+                                    <option value="">-- اختر --</option>
+                                    {% for item in audienceGendersList %}
+                                    <option value='{{ item.id }}'>{{ item.name }}</option>
+                                    {% endfor %}
+                                </select>
+                                <span style="color: red;" data-validate-for="audience_gender_id"></span>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <label>هوية الجمهور المخاطب</label>
+                                <input type="text" class="sy-input" name="audience_identification">
+                                <span style="color: red;" data-validate-for="audience_identification"></span>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <label>مجال العنوان</label>
+                                <select class="sy-input" name="title_field_id">
+                                    <option value="">-- اختر --</option>
+                                    {% for item in titleFieldsList %}
+                                    <option value='{{ item.id }}'>{{ item.name }}</option>
+                                    {% endfor %}
+                                </select>
+                                <span style="color: red;" data-validate-for="title_field_id"></span>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <label>نوع الكتابة المفضلة</label>
+                                <select class="sy-input" name="typing_mode_id">
+                                    <option value="">-- اختر --</option>
+                                    {% for item in typingModesList %}
+                                    <option value='{{ item.id }}'>{{ item.name }}</option>
+                                    {% endfor %}
+                                </select>
+                                <span style="color: red;" data-validate-for="typing_mode_id"></span>
+                            </div>
+                            <div class="col-12">
+                                <label>بجانب نافذة لإضافة أي تعليقات او ملاحظات</label>
+                                <textarea rows="10" class="sy-input" name="notes"></textarea>
+                                <span style="color: red;" data-validate-for="notes"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sy-user-box hidden">
+                        <h2>بيانات الحساب - هل لديك حساب؟
+                        </h2>
+                        <h3>نعم, </h3>
+                        <div class="sy-flex-container">
+                            <div class="sy-item-1-of-2-col">
+                                <label >ايميل</label>
+                                <input type="email" name="email" class="sy-input" />
+                            </div>
+                        </div>
+                        <h3>لا, </h3>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 mt-3 mt-md-0">
+                    <div class="sy-cart" id="sy-cart">
+                        <table width="100%" class="olreq" border="0" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr>
+                                    <td><strong>التكلفة</strong></td>
+                                    <td> <strong>الوقت</strong></td>
+                                </tr>
+                                <tr>
+                                    <td class="sy-price">
+                                        ---
+                                    </td>
+                                    <td class="sy-days">
+                                        ---
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <ul class="sy-cart-list">
+
+                            <li class="sy-cart-list-item">
+                                <div>
+                                    عدد الكلمات
+                                    <small>فى الوحدة</small>
+                                </div>
+                                <div>
+                                    <div class="sy-counter count">
+                                        <button type="button" data-key="min">-</button>
+                                        <span>0</span>
+                                        <button type="button" data-key="plus">+</button>
+                                    </div>
+                                    <input type="hidden" id="sy-input-word-count" name="words_count"/>
+                                </div>
+                            </li>
+                            <li class="sy-cart-list-item">
+                                <div>
+                                    الكمية
+                                    <small>عدد الوحدات</small>
+                                </div>
+                                <div>
+                                    <div class="sy-counter quantity">
+                                        <button type="button" data-key="min">-</button>
+                                        <span>0</span>
+                                        <button type="button" data-key="plus">+</button>
+                                    </div>
+                                    <input type="hidden" id="sy-input-quantity" name="quantity"/>
+                                </div>
+                            </li>
+                            <li class="sy-cart-list-item">
+                                <div>
+                                    كلام
+                                    <small>اختر واحد</small>
+                                </div>
+                                <div>
+                                    <input class="sy-checkbox" value="0" checked="checked" id="sy-ch1" type="radio" name="express" /><label for="sy-ch1" class="sy-checkbox">عادى</label>
+                                    <input class="sy-checkbox" value="1" id="sy-ch2" type="radio" name="express" /><label for="sy-ch2" class="sy-checkbox">سريع</label>
+                                </div>
+                            </li>
+                            <li class="sy-cart-list-item">
+                                <div>
+                                    الجودة
+                                    <small>اختر واحد</small>
+                                </div>
+                                <div>
+                                    <input class="sy-checkbox" value="0" checked="checked" id="sy-ch3" type="radio" name="high_quality" /><label for="sy-ch3" class="sy-checkbox">عادى</label>
+                                    <input class="sy-checkbox" value="1" id="sy-ch4" type="radio" name="high_quality" /><label for="sy-ch4" class="sy-checkbox">ممتاز</label>
+                                </div>
+                            </li>
+                        </ul>
+                        <button type="button" id="sy-next" class="sy-button-submit">التالى</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

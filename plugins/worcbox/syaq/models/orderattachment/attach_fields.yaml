@@ -1,0 +1,24 @@
+fields:
+    content:
+        label: Attachment
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: full
+        disabled: 0
+        required: 1
+        context:
+            - create
+            - preview
+        type: fileupload
+    note:
+        label: Notes
+        size: ''
+        span: full
+        required: 1
+        context:
+            - update
+            - preview
+        type: textarea

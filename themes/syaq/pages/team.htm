@@ -1,0 +1,32 @@
+title = "Team"
+url = "/team"
+layout = "default"
+is_hidden = 0
+
+[Worcbox\Features\Components\Items items]
+type = "team"
+==
+{% set items = items.items %}
+<section class="page-banner second-22">
+	<div class="container">
+		<div class="bread">
+			<h3>فريق العمل</h3>
+		</div>
+	</div>
+</section>
+<br/><br/>
+<div class="container">
+	<div class="row">
+		{% for item in items %}
+		<div class="col-12 col-md-4">
+			<div class="team card mb-4">
+				<img class="card-img-top" src=" {{item.icon.thumb(300,300,'crop')}}" />
+				<div class="card-body">
+					<h3 class="card-title">{{item.title}}</h3>
+					<p class="card-text">{{item.description}}</p>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>

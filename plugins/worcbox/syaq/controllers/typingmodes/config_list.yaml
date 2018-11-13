@@ -1,0 +1,12 @@
+list: $/worcbox/syaq/models/typingmode/columns.yaml
+modelClass: Worcbox\Syaq\Models\TypingMode
+title: TypingModes
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'worcbox/syaq/typingmodes/update/:id'

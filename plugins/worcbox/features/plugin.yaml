@@ -1,0 +1,45 @@
+plugin:
+    name: 'worcbox.features::lang.plugin.name'
+    description: 'worcbox.features::lang.plugin.description'
+    author: Worcbox
+    icon: oc-icon-asterisk
+    homepage: ''
+navigation:
+    main-menu-features:
+        label: Features
+        url: worcbox/features/items/bytype/feature
+        icon: icon-asterisk
+        permissions:
+            - 'worcbox.feature.*'
+        sideMenu:
+            side-menu-item:
+                label: Create
+                url: worcbox/features/items/create
+                icon: icon-plus
+                permissions:
+                    - worcbox.feature.create
+            side-menu-item2:
+                label: Features
+                url: worcbox/features/items/bytype/feature
+                icon: icon-list
+                permissions:
+                    - worcbox.feature.list
+            side-menu-item3:
+                label: Tabs
+                url: worcbox/features/items/bytype/tab
+                icon: icon-sitemap
+                permissions:
+                    - worcbox.feature.list
+            side-menu-item4:
+                label: Team
+                url: worcbox/features/items/bytype/team
+                icon: icon-users
+                permissions:
+                    - worcbox.feature.list
+permissions:
+    worcbox.feature.list:
+        tab: Features
+        label: 'View List'
+    worcbox.feature.create:
+        tab: Features
+        label: 'Create Items'

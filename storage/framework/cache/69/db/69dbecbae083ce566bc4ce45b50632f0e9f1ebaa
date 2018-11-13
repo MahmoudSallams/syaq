@@ -1,0 +1,195 @@
+1542016856a:1:{s:11:"account.htm";a:11:{s:8:"fileName";s:11:"account.htm";s:7:"content";s:3700:"title = "Account"
+url = "/account"
+layout = "default"
+is_hidden = 0
+
+[staticMenu]
+code = "account-menu"
+
+[session]
+security = "user"
+redirect = "login"
+==
+<?php
+function onSubmit(){
+		$data['name'] = Input::get('name');
+		if (Input::get('password')) {
+			$data['password'] = Input::get('password');
+			$data['password_confirmation'] = Input::get('password_confirmation');
+		}
+        $rules = [
+            'name' => 'string|required',
+            'password' => 'between:4,50|confirmed',
+        	'password_confirmation' => 'required_with:password|between:6,50',
+        ];
+        $messages = [
+            'required' => 'حقل إلزامى', 
+            'confirmed' => 'كلمة المرور ليست متطابقة',
+            'between' => 'كلمة المرور يجب أن تكون بين 6 و50 حرف',
+            'required_with' => 'تأكيد كلمة المرور إلزامى'
+       ];
+
+        $validator = Validator::make($data, $rules, $messages);
+        if ($validator->fails()) {
+            throw new ValidationException($validator);
+        }
+        
+        $foundUser = \RainLab\User\Models\User::find(Auth::getUser()->id);
+        $foundUser->name = $data['name'];
+        if (isset($data['password'])&& !empty($data['password'])){
+        	$foundUser->password = $data['password'];
+			$foundUser->password_confirmation = Input::get('password_confirmation');
+        }
+        if ($foundUser->save()){
+        	if (isset($data['password'])){
+        		return Redirect::to('login');
+        	} else {
+        		return Redirect::refresh();
+        	}
+        }
+}
+?>
+==
+{% component 'session' %}
+<section class="page-banner second-22">
+	<div class="container">
+		<div class="bread">
+			<h3>حسابى<h3>
+		</div>
+	</div>
+</section>
+
+<section class="light-bg text-right">
+	<br/><br/>
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			<div class="card">
+			  <div class="card-header">
+			    حسابى
+			  </div>
+				
+			{% if staticMenu.menuItems %}
+			    <div class="list-group list-group-flush">
+			    	{% for item in staticMenu.menuItems %}
+			    		<a class="list-group-item list-group-item-action {{item.isActive?"active":''}}" href="{{item.url}}">{{item.title}}</a>
+			    	{% endfor %}
+			    </div>
+			{% endif %}
+			</div>
+		</div>
+		<div class="col-md-8">
+			<div>
+				<form data-request="onSubmit" method="post" novalidate data-request-validate>
+					<div class="form-group">
+	                    <input type="text" class="form-control" value="{{user.name}}" id="name" name="name" placeholder="الاسم" required="">
+	                    <span style="color: red;" data-validate-for="name"></span>
+	                </div>
+					<div class="form-group">
+	                    <input type="password" class="form-control" id="password" name="password" placeholder="كلمة المرور" required="">
+	                    <span style="color: red;" data-validate-for="password"></span>
+	                </div>
+					<div class="form-group">
+	                    <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="كلمة المرور" required="">
+	                    <span style="color: red;" data-validate-for="password_confirmation"></span>
+	                </div>
+	                <button type="submit" id="submit" name="submit" class="btn btn-warning">
+	                    <span>تعديل</span>
+	                    <i style="display: none;" id="ajax-spinner" class="icon ion-load-a"></i>
+	                </button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<br/><br/>
+</section>";s:5:"mtime";i:1536690708;s:6:"markup";s:2068:"{% component 'session' %}
+<section class="page-banner second-22">
+	<div class="container">
+		<div class="bread">
+			<h3>حسابى<h3>
+		</div>
+	</div>
+</section>
+
+<section class="light-bg text-right">
+	<br/><br/>
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			<div class="card">
+			  <div class="card-header">
+			    حسابى
+			  </div>
+				
+			{% if staticMenu.menuItems %}
+			    <div class="list-group list-group-flush">
+			    	{% for item in staticMenu.menuItems %}
+			    		<a class="list-group-item list-group-item-action {{item.isActive?"active":''}}" href="{{item.url}}">{{item.title}}</a>
+			    	{% endfor %}
+			    </div>
+			{% endif %}
+			</div>
+		</div>
+		<div class="col-md-8">
+			<div>
+				<form data-request="onSubmit" method="post" novalidate data-request-validate>
+					<div class="form-group">
+	                    <input type="text" class="form-control" value="{{user.name}}" id="name" name="name" placeholder="الاسم" required="">
+	                    <span style="color: red;" data-validate-for="name"></span>
+	                </div>
+					<div class="form-group">
+	                    <input type="password" class="form-control" id="password" name="password" placeholder="كلمة المرور" required="">
+	                    <span style="color: red;" data-validate-for="password"></span>
+	                </div>
+					<div class="form-group">
+	                    <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="كلمة المرور" required="">
+	                    <span style="color: red;" data-validate-for="password_confirmation"></span>
+	                </div>
+	                <button type="submit" id="submit" name="submit" class="btn btn-warning">
+	                    <span>تعديل</span>
+	                    <i style="display: none;" id="ajax-spinner" class="icon ion-load-a"></i>
+	                </button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<br/><br/>
+</section>";s:4:"code";s:1464:"function onSubmit(){
+		$data['name'] = Input::get('name');
+		if (Input::get('password')) {
+			$data['password'] = Input::get('password');
+			$data['password_confirmation'] = Input::get('password_confirmation');
+		}
+        $rules = [
+            'name' => 'string|required',
+            'password' => 'between:4,50|confirmed',
+        	'password_confirmation' => 'required_with:password|between:6,50',
+        ];
+        $messages = [
+            'required' => 'حقل إلزامى', 
+            'confirmed' => 'كلمة المرور ليست متطابقة',
+            'between' => 'كلمة المرور يجب أن تكون بين 6 و50 حرف',
+            'required_with' => 'تأكيد كلمة المرور إلزامى'
+       ];
+
+        $validator = Validator::make($data, $rules, $messages);
+        if ($validator->fails()) {
+            throw new ValidationException($validator);
+        }
+        
+        $foundUser = \RainLab\User\Models\User::find(Auth::getUser()->id);
+        $foundUser->name = $data['name'];
+        if (isset($data['password'])&& !empty($data['password'])){
+        	$foundUser->password = $data['password'];
+			$foundUser->password_confirmation = Input::get('password_confirmation');
+        }
+        if ($foundUser->save()){
+        	if (isset($data['password'])){
+        		return Redirect::to('login');
+        	} else {
+        		return Redirect::refresh();
+        	}
+        }
+}";s:5:"title";s:7:"Account";s:3:"url";s:8:"/account";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:10:"staticMenu";a:1:{s:4:"code";s:12:"account-menu";}s:7:"session";a:2:{s:8:"security";s:4:"user";s:8:"redirect";s:5:"login";}}}

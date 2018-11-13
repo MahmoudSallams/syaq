@@ -1,0 +1,168 @@
+fields:
+    status:
+        label: Action
+        emptyOption: '-- SEND TO --'
+        options:
+            implementation: 'Send to Implementer'
+#            implementation_done: 'Implementation Done'
+            reviewing: 'Send to Reviewer'
+#            reviewing_done: 'Reviewing Done'
+            finished: 'Send to Client'
+            archived: 'Mark as Archived'
+        span: full
+        type: dropdown
+    Implementer:
+        label: Implementer
+        nameFrom: name
+        descriptionFrom: description
+        emptyOption: 'Please Select'
+        select: 'CONCAT(first_name, '' '', last_name)'
+        span: full
+        required: 1
+        type: relation
+        trigger:
+            action: show
+            field: status
+            condition: 'value[implementation]'
+    Reviewer:
+        label: Reviewer
+        nameFrom: name
+        descriptionFrom: description
+        emptyOption: 'Please Select'
+        select: 'CONCAT(first_name, '' '', last_name)'
+        span: full
+        required: 1
+        type: relation
+        trigger:
+            action: show
+            field: status
+            condition: 'value[reviewing]'
+    history_note:
+            label: Notes For History
+            size: small
+            span: full
+            type: textarea
+tabs:
+    fields:
+        Service:
+            label: Service
+            nameFrom: name
+            descriptionFrom: description
+            span: auto
+            type: relation
+            tab: Data
+            disabled: 1
+        Field:
+            label: Field
+            nameFrom: name
+            descriptionFrom: description
+            span: auto
+            type: relation
+            tab: Data
+            disabled: 1
+        SpeechFormat:
+            label: 'Speech Format'
+            nameFrom: name
+            descriptionFrom: description
+            span: auto
+            type: relation
+            tab: Data
+            disabled: 1
+        TypingMode:
+            label: 'Typing Mode'
+            nameFrom: name
+            descriptionFrom: description
+            span: auto
+            type: relation
+            tab: Data
+            disabled: 1 
+        AudienceGender:
+            label: 'Audience Gender'
+            nameFrom: name
+            descriptionFrom: description
+            span: auto
+            type: relation
+            tab: Data
+            disabled: 1 
+        TitleField:
+            label: 'Title Field'
+            nameFrom: name
+            descriptionFrom: description
+            span: auto
+            type: relation
+            tab: Data
+            disabled: 1 
+        express:
+            label: Express
+            span: auto
+            disabled: 1
+            type: switch
+            tab: Data 
+        high_quality:
+            label: Quality
+            span: auto
+            disabled: 1
+            type: switch
+            tab: Data
+        topic:
+            label: Topic
+            span: auto
+            disabled: 1
+            type: text
+            tab: Data
+        created_at:
+            label: 'Creation Date'
+            mode: datetime
+            span: auto
+            disabled: 1
+            type: datepicker
+            tab: Data
+        notes:
+            label: Noted
+            size: small
+            span: full
+            disabled: 1
+            type: textarea
+            tab: Data
+        audience_identification:
+            label: 'Audience Identification'
+            size: ''
+            span: auto
+            disabled: 1
+            type: textarea
+            tab: Data
+        days_count:
+            label: 'Days Count'
+            span: auto
+            disabled: 1
+            type: number
+            tab: Data
+        quantity:
+            label: Quantity
+            span: auto
+            disabled: 1
+            type: number
+            tab: Data
+        words_count:
+            label: 'Words Count'
+            span: auto
+            disabled: 1
+            type: number
+            tab: Data
+        User:
+            label: User
+            nameFrom: name
+            span: auto
+            type: relation
+            tab: User
+            disabled: 1
+        OrderAttachments:
+            span: full
+            path: $/worcbox/syaq/models/orderattachment/_list_field.htm
+            type: partial
+            tab: Attachments
+        OrderHistories:
+            span: full
+            path: $/worcbox/syaq/models/orderhistory/_list_field.htm
+            type: partial
+            tab: History

@@ -1,0 +1,20 @@
+plugin:
+    name: 'worcbox.staticdata::lang.plugin.name'
+    description: 'worcbox.staticdata::lang.plugin.description'
+    author: Worcbox
+    icon: oc-icon-database
+    homepage: ''
+navigation:
+    static-data:
+        label: 'Static Data'
+        url: worcbox/staticData/lookups
+        icon: icon-database
+        permissions:
+            - worcbox.staticData.list
+permissions:
+    worcbox.staticData.list:
+        tab: 'Static Data'
+        label: 'View List'
+    worcbox.staticData.create:
+        tab: 'Static Data'
+        label: 'Create Items'

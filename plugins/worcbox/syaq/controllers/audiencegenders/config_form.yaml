@@ -1,0 +1,10 @@
+name: AudienceGenders
+form: $/worcbox/syaq/models/audiencegender/fields.yaml
+modelClass: Worcbox\Syaq\Models\AudienceGender
+defaultRedirect: worcbox/syaq/audiencegenders
+create:
+    redirect: 'worcbox/syaq/audiencegenders/update/:id'
+    redirectClose: worcbox/syaq/audiencegenders
+update:
+    redirect: worcbox/syaq/audiencegenders
+    redirectClose: worcbox/syaq/audiencegenders

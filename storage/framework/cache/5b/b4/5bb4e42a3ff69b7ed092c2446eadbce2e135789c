@@ -1,0 +1,61 @@
+1542016856a:1:{s:11:"package.htm";a:10:{s:8:"fileName";s:11:"package.htm";s:7:"content";s:793:"title = "Package"
+url = "/package/:id"
+layout = "default"
+is_hidden = 0
+
+[package]
+param = "id"
+==
+{% set item = package.item %}
+<section class="page-banner second-22">
+	<div class="container">
+		<div class="bread">
+			<h3>{{item.title}}</h3>
+		</div>
+	</div>
+</section>
+<section class="in-page">
+	<div class="container">
+		<div class="row justify-content-between">
+			<div class="col-auto">
+				<ul>
+					<li>{{item.line_1}}</li>
+					<li>{{item.line_2}}</li>
+					<li>{{item.line_3}}</li>
+				</ul>
+			</div>
+			<div class="col-auto">
+				<p class="start-price"><b> <span class="price main-color"><span>SR</span>{{item.price}}</span> 
+				<span class="per">شهرياً</span></b></p>
+			</div>
+		</div>
+		<br/><br/>
+		<p>{{item.description}}</p>
+	</div>
+</section>";s:5:"mtime";i:1536690708;s:6:"markup";s:694:"{% set item = package.item %}
+<section class="page-banner second-22">
+	<div class="container">
+		<div class="bread">
+			<h3>{{item.title}}</h3>
+		</div>
+	</div>
+</section>
+<section class="in-page">
+	<div class="container">
+		<div class="row justify-content-between">
+			<div class="col-auto">
+				<ul>
+					<li>{{item.line_1}}</li>
+					<li>{{item.line_2}}</li>
+					<li>{{item.line_3}}</li>
+				</ul>
+			</div>
+			<div class="col-auto">
+				<p class="start-price"><b> <span class="price main-color"><span>SR</span>{{item.price}}</span> 
+				<span class="per">شهرياً</span></b></p>
+			</div>
+		</div>
+		<br/><br/>
+		<p>{{item.description}}</p>
+	</div>
+</section>";s:4:"code";N;s:5:"title";s:7:"Package";s:3:"url";s:12:"/package/:id";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:7:"package";a:1:{s:5:"param";s:2:"id";}}}

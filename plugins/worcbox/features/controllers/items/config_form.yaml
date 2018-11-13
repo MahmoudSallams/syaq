@@ -1,0 +1,10 @@
+name: Items
+form: $/worcbox/features/models/item/fields.yaml
+modelClass: Worcbox\Features\Models\Item
+defaultRedirect: worcbox/features/items
+create:
+    redirect: 'worcbox/features/items/update/:id'
+    redirectClose: worcbox/features/items
+update:
+    redirect: worcbox/features/items
+    redirectClose: worcbox/features/items

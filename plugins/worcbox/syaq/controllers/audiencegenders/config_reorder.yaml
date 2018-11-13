@@ -1,0 +1,4 @@
+title: AudienceGenders
+modelClass: Worcbox\Syaq\Models\AudienceGender
+toolbar:
+    buttons: reorder_toolbar

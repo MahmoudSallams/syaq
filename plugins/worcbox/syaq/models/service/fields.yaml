@@ -1,0 +1,42 @@
+fields:
+    name:
+        label: Name
+        span: auto
+        type: text
+    description:
+        label: Description
+        size: ''
+        span: auto
+        type: textarea
+    minimum_words_count:
+        label: 'Minimum Words Count'
+        span: auto
+        type: number
+    basic_cost:
+        label: 'Basic Cost'
+        span: auto
+        type: number
+    basic_duration_in_days:
+        label: 'Basic Duration (Days)'
+        span: auto
+        type: number
+    express_cost:
+        label: 'Express Cost'
+        span: auto
+        type: number
+    express_duration_in_days:
+        label: 'Express Duration (Days)'
+        span: auto
+        type: number
+    high_quality_cost:
+        label: 'High Quality Cost'
+        span: auto
+        type: number
+    extra_block_words_count:
+        label: 'Extra Block Words Count'
+        span: auto
+        type: number
+    extra_block_cost:
+        label: 'Extra Block Cost'
+        span: auto
+        type: number

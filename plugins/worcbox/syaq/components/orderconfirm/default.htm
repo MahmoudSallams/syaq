@@ -1,0 +1,103 @@
+<div class="container">
+    <div class="sy-box">
+        <ul class="sy-wizard-items">
+            <li class="sy-wizard-item">
+                <span>1</span>نوع المحتوى
+            </li>
+            <li class="sy-wizard-item">
+                <span>2</span>بيانات المحتوى
+            </li>
+            <li class="sy-wizard-item">
+                <span>3</span>بيانات الحساب
+            </li>
+            <li class="sy-wizard-item active">
+                <span>4</span>تكملة الطلب
+            </li>
+        </ul>
+        <div class="sy-flex-container" >
+            <div class="sy-item-3-of-3-col">
+                <div class="sy-user-box">
+                    <h2>شكراً {{ user.name }} على اختيارك سياق</h2>
+                    <h4 id="sy-total-price"></h4>
+                    <table class="orderconfirm">
+                        <tbody>
+                            <tr>
+                                <td >اسم العميل</td>
+                                <td >{{ user.name }}</td>
+                            </tr>
+                            <tr>
+                                <td>البريد الالكترونى</td>
+                                <td>{{ user.email }}</td>
+                            </tr>
+                            <tr>
+                                <td>تاريخ الطلب</td>
+                                <td>{{ order['requested'] }}</td>
+                            </tr>
+                            <tr>
+                                <td>مدة التنفيذ بالايام</td>
+                                <td>{{ order['days_count'] }} يوم</td>
+                            </tr>
+                            <tr>
+                                <td>نوع الطلب</td>
+                                <td>{{ order['service'] }}</td>
+                            </tr>
+                            <tr>
+                                <td>الموضوع</td>
+                                <td>{{ order['topic'] }}</td>
+                            </tr>
+                            <tr>
+                                <td>المجال</td>
+                                <td>{{ order['field'] }}</td>
+                            </tr>
+                            <tr>
+                                <td>صيغة الطلب</td>
+                                <td>{{ order['speech_format'] }}</td>
+                            </tr>
+                            <tr>
+                                <td>جنس الجمهور المخاطب</td>
+                                <td>{{ order['audience_gender'] }} </td>
+                            </tr>
+                            <tr>
+                                <td>هوية الجمهور المخاطب</td>
+                                <td>{{ order['audience_identification'] }}</td>
+                            </tr>
+                            <tr>
+                                <td>مجال العنوان</td>
+                                <td>{{ order['title_field'] }}</td>
+                            </tr>
+                            <tr>
+                                <td>نوع الكتاب المفضل</td>
+                                <td>{{ order['typing_mode'] }}</td>
+                            </tr>
+                            <tr>
+                                <td>عدد الكلمات</td>
+                                <td>{{ order['words_count'] }}</td>
+                            </tr>
+                            <tr>
+                                <td>الكمية</td>
+                                <td>{{ order['quantity'] }}</td>
+                            </tr>
+                            <tr>
+                                <td>سرعة التسليم</td>
+                                <td>{{ order['express'] ? "سريع" : "عادى"}}</td>
+                            </tr>
+                            <tr>
+                                <td>الجودة</td>
+                                <td>{{ order['high_quality'] ? "متميز" : "عادى"}}</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td >اجمالى قيمة الطلب</td>
+                                <td >SR {{ order['total'] }}</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <form data-request="onConfirm"  name="confirm" method="POST">
+                        <input type="submit" value="تأكيد" class="sy-button-submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,107 @@
+1542016858a:1:{s:10:"footer.htm";a:9:{s:8:"fileName";s:10:"footer.htm";s:7:"content";s:2465:"description = "Footer"
+
+[viewBag]
+snippetCode = "footer"
+snippetName = "Footer"
+
+[staticMenu]
+code = "footer-1"
+
+[staticMenu staticMenu2]
+code = "footer-2"
+==
+<section class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-lg-4 m-b-mob-30 m-b-tab-30">
+				<h4 class="footer-title">{{ footer_about['key'] }}</h4>
+				<p>{{ footer_about['value'] }}</p>
+				<ul class="list-unstyled">
+					<li><i class="fa fa-envelope ml-3"></i>{{ contact_ksa_email['value'] }}</li>
+					<li class="phone"><i class="fa fa-phone ml-3"></i><span style="direction: ltr;display: inline-block;">{{ contact_ksa_phone['value'] }}</span></li>
+					<li><i class="fa fa-home ml-3"></i>{{ contact_ksa_address['value'] }}</li>
+				</ul>
+			</div>
+			<div class="col-sm-6 col-lg-2 m-b-mob-30 m-b-tab-30">
+				<h4 class="footer-title">روابط اخرى</h4>
+				{% if staticMenu.menuItems %}
+				    <ul class="list-unstyled">
+				        {% partial staticMenu ~ "::items" items=staticMenu.menuItems %}
+				    </ul>
+				{% endif %}
+			</div>
+			<div class="col-sm-6 col-lg-2 m-b-mob-30 m-b-tab-30">
+				<h4 class="footer-title">&nbsp;</h4>
+				{% if staticMenu2.menuItems %}
+				    <ul class="list-unstyled">
+				        {% partial staticMenu2 ~ "::items" items=staticMenu2.menuItems %}
+				    </ul>
+				{% endif %}
+
+			</div>
+			
+			<div class="col-sm-6 col-lg-4">
+				<h4 class="footer-title">الشبكات الاجتماعية</h4>
+				<ul class="list-inline footer-social text-center">
+					<li class="list-inline-item"><a href="{{ footer_links_facebook['value'] }}" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a></li>
+					<li class="list-inline-item"><a href="{{ footer_links_twitter['value'] }}" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a></li>
+					<li class="list-inline-item"><a href="{{ footer_links_tumblr['value'] }}" target="_blank" class="tumblr"><i class="fab fa-tumblr"></i></a></li>
+					<li class="list-inline-item"><a href="{{ footer_links_google['value'] }}" target="_blank" class="googleplus"><i class="fab fa-google-plus"></i></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+<div class="copyright">
+	<div class="container">
+		<p>جميع الحقوق محفوظة لسياق 2018<br>
+		تصميم و برمجة <a href="http://www.worcbox.com" target="_blank" style="color:#FFFFFF; font-weight:normal">worcbox</a></p>
+	</div>
+</div>";s:5:"mtime";i:1536690708;s:6:"markup";s:2306:"<section class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-lg-4 m-b-mob-30 m-b-tab-30">
+				<h4 class="footer-title">{{ footer_about['key'] }}</h4>
+				<p>{{ footer_about['value'] }}</p>
+				<ul class="list-unstyled">
+					<li><i class="fa fa-envelope ml-3"></i>{{ contact_ksa_email['value'] }}</li>
+					<li class="phone"><i class="fa fa-phone ml-3"></i><span style="direction: ltr;display: inline-block;">{{ contact_ksa_phone['value'] }}</span></li>
+					<li><i class="fa fa-home ml-3"></i>{{ contact_ksa_address['value'] }}</li>
+				</ul>
+			</div>
+			<div class="col-sm-6 col-lg-2 m-b-mob-30 m-b-tab-30">
+				<h4 class="footer-title">روابط اخرى</h4>
+				{% if staticMenu.menuItems %}
+				    <ul class="list-unstyled">
+				        {% partial staticMenu ~ "::items" items=staticMenu.menuItems %}
+				    </ul>
+				{% endif %}
+			</div>
+			<div class="col-sm-6 col-lg-2 m-b-mob-30 m-b-tab-30">
+				<h4 class="footer-title">&nbsp;</h4>
+				{% if staticMenu2.menuItems %}
+				    <ul class="list-unstyled">
+				        {% partial staticMenu2 ~ "::items" items=staticMenu2.menuItems %}
+				    </ul>
+				{% endif %}
+
+			</div>
+			
+			<div class="col-sm-6 col-lg-4">
+				<h4 class="footer-title">الشبكات الاجتماعية</h4>
+				<ul class="list-inline footer-social text-center">
+					<li class="list-inline-item"><a href="{{ footer_links_facebook['value'] }}" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a></li>
+					<li class="list-inline-item"><a href="{{ footer_links_twitter['value'] }}" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a></li>
+					<li class="list-inline-item"><a href="{{ footer_links_tumblr['value'] }}" target="_blank" class="tumblr"><i class="fab fa-tumblr"></i></a></li>
+					<li class="list-inline-item"><a href="{{ footer_links_google['value'] }}" target="_blank" class="googleplus"><i class="fab fa-google-plus"></i></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+<div class="copyright">
+	<div class="container">
+		<p>جميع الحقوق محفوظة لسياق 2018<br>
+		تصميم و برمجة <a href="http://www.worcbox.com" target="_blank" style="color:#FFFFFF; font-weight:normal">worcbox</a></p>
+	</div>
+</div>";s:4:"code";N;s:11:"description";s:6:"Footer";s:7:"viewBag";a:2:{s:11:"snippetCode";s:6:"footer";s:11:"snippetName";s:6:"Footer";}s:10:"staticMenu";a:1:{s:4:"code";s:8:"footer-1";}s:22:"staticMenu staticMenu2";a:1:{s:4:"code";s:8:"footer-2";}}}

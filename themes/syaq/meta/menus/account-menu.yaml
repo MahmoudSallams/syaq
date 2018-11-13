@@ -1,0 +1,37 @@
+name: 'Account Menu'
+items:
+    -
+        title: 'البيانات الشخصية'
+        type: cms-page
+        code: account
+        reference: account
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'طلبات قيد التنفيذ'
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: running-orders
+        reference: running-orders
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'طلبات تم تسليمها'
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: finished-orders
+        reference: finished-orders
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'

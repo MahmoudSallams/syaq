@@ -1,0 +1,4 @@
+title: Lookups
+modelClass: Worcbox\StaticData\Models\Lookup
+toolbar:
+    buttons: reorder_toolbar

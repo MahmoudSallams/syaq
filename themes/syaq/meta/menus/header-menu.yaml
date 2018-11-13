@@ -1,0 +1,89 @@
+name: 'Header Menu'
+items:
+    -
+        title: الرئيسية
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: home
+        reference: home
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: aaa
+            isExternal: '0'
+    -
+        title: 'من نحن'
+        nesting: '0'
+        type: static-page
+        url: ''
+        code: about
+        reference: about
+        cmsPage: ''
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: الباقات
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: packages
+        reference: packages
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: منتجاتنا
+        type: cms-page
+        code: e-shop
+        reference: e-shop
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: الخدمات
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: services
+        reference: services
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'تواصل معنا'
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: contact
+        reference: contact
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'اطلب محتوى'
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: request
+        reference: request
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: btn-warning
+            isExternal: '0'
